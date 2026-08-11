@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FreshMarket Sitemap — Complete index of all pages, produce categories, services, blog articles, and utility pages.">
+  <meta property="og:title" content="Sitemap — FreshMarket">
+  <meta name="theme-color" content="#14532D">
+  <link rel="canonical" href="sitemap.html">
+  <title>Sitemap — FreshMarket</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <script src="assets/js/icons.js"></script>
+  <style>
+    .sitemap-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem; }
+    .sitemap-card { background:var(--bg-card); border:1px solid var(--border-light); border-radius:var(--radius-2xl); padding:2rem; box-shadow:var(--shadow-card); }
+    .sitemap-card h2 { font-family:var(--font-serif); font-size:var(--text-xl); color:var(--color-forest); margin-bottom:1.25rem; display:flex; align-items:center; gap:0.5rem; border-bottom:1px solid var(--border-light); padding-bottom:0.75rem; }
+    .sitemap-links { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.625rem; }
+    .sitemap-link { display:flex; align-items:center; gap:0.75rem; color:var(--text-secondary); text-decoration:none; padding:0.5rem 0.75rem; border-radius:var(--radius-lg); transition:all var(--dur-fast); }
+    .sitemap-link:hover { background:var(--color-forest-50); color:var(--color-forest); padding-left:1rem; }
+    .sitemap-link .icon { width:28px; height:28px; background:var(--bg-secondary); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; font-size:0.875rem; flex-shrink:0; color:var(--color-forest); }
+  </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div id="page-loader" aria-hidden="true"><div class="loader-logo"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.1 1.4 9-1 7.6-8.6 9-9.4 9z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> FreshMarket</div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>
+<div id="page-transition" aria-hidden="true"></div>
+<div class="toast-container" aria-live="polite"></div>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="navbar scrolled" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container navbar-inner">
+      <a href="index.html" class="navbar-logo"><div class="logo-icon" aria-hidden="true"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.1 1.4 9-1 7.6-8.6 9-9.4 9z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div><div class="logo-text"><span class="logo-main">FreshMarket</span><span class="logo-sub">Farm to Home</span></div></a>
+      <ul class="nav-menu" role="list">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="home2.html" class="nav-link">Shop</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="nav-icon-btn theme-toggle" aria-label="Toggle dark mode"><span class="theme-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span></button>
+        <button class="nav-icon-btn rtl-toggle rtl-btn" aria-label="Toggle RTL">RTL</button>
+        <a href="contact.html" class="nav-cta">Order Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav-overlay" id="nav-overlay"></div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <div class="mobile-nav-header"><a href="index.html" class="navbar-logo"><div class="logo-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.1 1.4 9-1 7.6-8.6 9-9.4 9z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div><div class="logo-text"><span class="logo-main">FreshMarket</span></div></a><button class="mobile-close" id="mobile-close" aria-label="Close">✕</button></div>
+    <div class="mobile-nav-links"><a href="index.html" class="mobile-nav-link">Home</a><a href="home2.html" class="mobile-nav-link">Shop</a><a href="about.html" class="mobile-nav-link">About</a><a href="services.html" class="mobile-nav-link">Services</a><a href="blog.html" class="mobile-nav-link">Blog</a><a href="contact.html" class="mobile-nav-link">Contact</a></div>
+    <div class="mobile-nav-footer"><a href="contact.html" class="mobile-cta">Order Now</a></div>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <!-- ══ SECTION 1: HERO ══ -->
+  <section class="page-hero" aria-labelledby="sitemap-hero-heading">
+    <div class="shape-1" aria-hidden="true"></div>
+    <div class="shape-2" aria-hidden="true"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><span class="current" aria-current="page">Sitemap</span></nav>
+      <h1 class="page-hero-title" id="sitemap-hero-heading">Site <em>Structure</em></h1>
+      <p class="page-hero-subtitle">All 12 pages and key sections of the FreshMarket website in one index.</p>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 2: SITEMAP CARDS ══ -->
+  <section class="section bg-primary">
+    <div class="container">
+      <div class="sitemap-grid" data-stagger="0.1">
+
+        <!-- Main Pages -->
+        <div class="sitemap-card" data-reveal="fade-up" data-delay="100">
+          <h2><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Main Pages</h2>
+          <ul class="sitemap-links">
+            <li><a href="index.html" class="sitemap-link"><div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div><div><div style="font-weight:600;color:var(--text-primary);">Home Page</div><div style="font-size:var(--text-xs);color:var(--text-muted);">Hero slider, produce, CTA</div></div></a></li>
+            <li><a href="home2.html" class="sitemap-link"><div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div><div><div style="font-weight:600;color:var(--text-primary);">Shop Page</div><div style="font-size:var(--text-xs);color:var(--text-muted);">Daily picks, category filter</div></div></a></li>
+            <li><a href="about.html" class="sitemap-link"><div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v20"/><path d="M8 6l4-2 4 2"/><path d="M7 10l5-2 5 2"/></svg></div><div><div style="font-weight:600;color:var(--text-primary);">About Us</div><div style="font-size:var(--text-xs);color:var(--text-muted);">Story, team, partner farms</div></div></a></li>
+            <li><a href="services.html" class="sitemap-link"><div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><div><div style="font-weight:600;color:var(--text-primary);">Services</div><div style="font-size:var(--text-xs);color:var(--text-muted);">Delivery, subscriptions</div></div></a></li>
+            <li><a href="blog.html" class="sitemap-link"><div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1m2 13a2 2 0 0 1-2-2V7m2 13a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/></svg></div><div><div style="font-weight:600;color:var(--text-primary);">Blog</div><div style="font-size:var(--text-xs);color:var(--text-muted);">Recipes, farm stories</div></div></a></li>
+            <li><a href="blog-details.html" class="sitemap-link"><div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><div><div style="font-weight:600;color:var(--text-primary);">Blog Detail</div><div style="font-size:var(--text-xs);color:var(--text-muted);">Article &amp; recipe view</div></div></a></li>
+            <li><a href="contact.html" class="sitemap-link"><div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div style="font-weight:600;color:var(--text-primary);">Contact</div><div style="font-size:var(--text-xs);color:var(--text-muted);">Form, map, pincode checker</div></div></a></li>
+          </ul>
+        </div>
+
+        <!-- Produce Categories -->
+        <div class="sitemap-card" data-reveal="fade-up" data-delay="200">
+          <h2><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 13v8"/><path d="M9 21h6"/><path d="M7 11.5a4.5 4.5 0 0 1 3-4.24 5 5 0 0 1 9.5 1.74 4.5 4.5 0 0 1-2.5 8h-7a4.5 4.5 0 0 1-3-5.5z"/></svg> Produce Categories</h2>
+          <ul class="sitemap-links">
+            <li><a href="home2.html#daily-produce" class="sitemap-link"><div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v6"/><path d="M4.93 10.93l4.24 4.24"/><path d="M2 18h20"/><path d="M20 18a8 8 0 0 0-16 0"/></svg></div><div><div style="font-weight:600;color:var(--text-primary);">Daily Produce</div><div style="font-size:var(--text-xs);color:var(--text-muted);">Today's fresh harvest</div></div></a></li>
+            <li><a href="home2.html#vegetables" class="sitemap-link"><div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 13v8"/><path d="M7 11.5a4.5 4.5 0 0 1 3-4.24 5 5 0 0 1 9.5 1.74 4.5 4.5 0 0 1-2.5 8h-7a4.5 4.5 0 0 1-3-5.5z"/></svg></div><div><div style="font-weight:600;color:var(--text-primary);">Vegetables</div><div style="font-size:var(--text-xs);color:var(--text-muted);">50+ organic varieties</div></div></a></li>
+            <li><a href="home2.html#fruits" class="sitemap-link"><div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="13" r="9"/><path d="M12 4V2"/><path d="M10 2h4"/><path d="M12 13l3-3"/></svg></div><div><div style="font-weight:600;color:var(--text-primary);">Fruits</div><div style="font-size:var(--text-xs);color:var(--text-muted);">40+ fresh fruits</div></div></a></li>
+            <li><a href="home2.html#herbs" class="sitemap-link"><div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.1 1.4 9-1 7.6-8.6 9-9.4 9z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div><div><div style="font-weight:600;color:var(--text-primary);">Herbs &amp; Greens</div><div style="font-size:var(--text-xs);color:var(--text-muted);">25+ aromatic herbs</div></div></a></li>
+            <li><a href="home2.html#specials" class="sitemap-link"><div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div><div style="font-weight:600;color:var(--text-primary);">Seasonal Specials</div><div style="font-size:var(--text-xs);color:var(--text-muted);">Limited-edition harvest</div></div></a></li>
+            <li><a href="home2.html#bulk" class="sitemap-link"><div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div><div><div style="font-weight:600;color:var(--text-primary);">Bulk Orders</div><div style="font-size:var(--text-xs);color:var(--text-muted);">Wholesale supply</div></div></a></li>
+          </ul>
+        </div>
+
+        <!-- Legal & Utility -->
+        <div class="sitemap-card" data-reveal="fade-up" data-delay="300">
+          <h2><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Legal &amp; Utility</h2>
+          <ul class="sitemap-links">
+            <li><a href="privacy-policy.html" class="sitemap-link"><div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><div style="font-weight:600;color:var(--text-primary);">Privacy Policy</div><div style="font-size:var(--text-xs);color:var(--text-muted);">Data protection</div></div></a></li>
+            <li><a href="terms.html" class="sitemap-link"><div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg></div><div><div style="font-weight:600;color:var(--text-primary);">Terms &amp; Conditions</div><div style="font-size:var(--text-xs);color:var(--text-muted);">User agreement</div></div></a></li>
+            <li><a href="sitemap.html" class="sitemap-link" aria-current="page"><div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div style="font-weight:600;color:var(--color-forest);">Sitemap</div><div style="font-size:var(--text-xs);color:var(--text-muted);">This page</div></div></a></li>
+            <li><a href="404.html" class="sitemap-link"><div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><div><div style="font-weight:600;color:var(--text-primary);">404 Error Page</div><div style="font-size:var(--text-xs);color:var(--text-muted);">Page not found demo</div></div></a></li>
+            <li><a href="maintenance.html" class="sitemap-link"><div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><div><div style="font-weight:600;color:var(--text-primary);">Maintenance Page</div><div style="font-size:var(--text-xs);color:var(--text-muted);">Under maintenance demo</div></div></a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="footer-logo"><div class="logo-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.1 1.4 9-1 7.6-8.6 9-9.4 9z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div><div class="logo-text"><span class="logo-main">FreshMarket</span><span class="logo-sub">Farm to Home</span></div></a><p>Premium organic produce delivered daily since 2018.</p></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul class="footer-links"><li><a href="index.html" class="footer-link">Home</a></li><li><a href="home2.html" class="footer-link">Shop</a></li><li><a href="about.html" class="footer-link">About</a></li><li><a href="services.html" class="footer-link">Services</a></li><li><a href="blog.html" class="footer-link">Blog</a></li><li><a href="contact.html" class="footer-link">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul class="footer-links"><li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li><li><a href="terms.html" class="footer-link">Terms &amp; Conditions</a></li><li><a href="sitemap.html" class="footer-link">Sitemap</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><div class="footer-contact-item"><div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><a href="tel:+18003734765" style="color:inherit;">+1 800 FRESH MK</a></div></div><div class="footer-contact-item"><div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><a href="mailto:hello@freshmarket.com" style="color:inherit;">hello@freshmarket.com</a></div></div></div>
+    </div>
+    <div class="footer-bottom"><p class="footer-copy">© 2026 FreshMarket. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/animations.js"></script>
+<script src="assets/js/utils.js"></script>
+</body>
+</html>

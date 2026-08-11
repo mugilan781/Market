@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FreshMarket Shop — Browse our full selection of daily fresh produce, seasonal fruits, vegetables, herbs, and organic specialties. Same-day delivery available.">
+  <meta property="og:title" content="Shop Fresh Produce — FreshMarket">
+  <meta name="theme-color" content="#14532D">
+  <link rel="canonical" href="home2.html">
+  <title>Shop Fresh Produce — FreshMarket</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <script src="assets/js/icons.js"></script>
+  <style>
+    .split-hero {
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: var(--navbar-h);
+      background: var(--bg-primary);
+      overflow: hidden;
+      position: relative;
+    }
+    .split-hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem var(--container-pad) 4rem 0;
+      padding-left: max(var(--container-pad), calc((100vw - var(--container-xl)) / 2 + var(--container-pad)));
+    }
+    .split-hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .split-hero-right img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .split-hero-right::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(20,83,45,0.2) 0%, transparent 70%);
+    }
+    .floating-badge {
+      position: absolute;
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      padding: 0.875rem 1.25rem;
+      box-shadow: var(--shadow-xl);
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      z-index: 10;
+      animation: float 4s ease-in-out infinite;
+    }
+    .floating-badge:nth-child(2) { animation-delay: -1.5s; }
+    .floating-badge:nth-child(3) { animation-delay: -3s; }
+    .freshness-strip {
+      background: var(--color-forest);
+      padding: 1.25rem 0;
+    }
+    .freshness-items {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .freshness-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.95);
+      font-size: var(--text-sm);
+      font-weight: var(--fw-medium);
+    }
+    .freshness-item .fi-icon {
+      font-size: 1.375rem;
+      color: var(--color-gold);
+    }
+    .freshness-divider {
+      width: 1px;
+      height: 24px;
+      background: rgba(255,255,255,0.2);
+    }
+    .product-grid-filters {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .farm-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      transition: all var(--dur-normal) var(--ease-smooth);
+      box-shadow: var(--shadow-card);
+    }
+    .farm-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
+    .farm-card-header {
+      background: var(--grad-primary);
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .farm-avatar {
+      width: 56px;
+      height: 56px;
+      background: rgba(255,255,255,0.2);
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      flex-shrink: 0;
+    }
+    .coverage-zone {
+      padding: 1.5rem;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      background: var(--bg-card);
+      text-align: center;
+      transition: all var(--dur-normal);
+    }
+    .coverage-zone:hover { border-color: var(--color-leaf); box-shadow: 0 0 0 3px rgba(101,163,13,0.1); }
+    @media (max-width: 768px) {
+      .split-hero { grid-template-columns: 1fr; }
+      .split-hero-right { height: 50vh; }
+      .split-hero-left { padding: 2rem var(--container-pad); }
+      .floating-badge { display: none; }
+    }
+  </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div id="page-loader" aria-hidden="true">
+  <div class="loader-logo"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.1 1.4 9-1 7.6-8.6 9-9.4 9z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> FreshMarket</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
+<div id="page-transition" aria-hidden="true"></div>
+<div class="toast-container" aria-live="polite"></div>
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" aria-label="Close">✕</button>
+    <img class="lightbox-img" src="" alt="">
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="navbar transparent" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container navbar-inner">
+      <a href="index.html" class="navbar-logo" aria-label="FreshMarket Home">
+        <div class="logo-icon" aria-hidden="true"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.1 1.4 9-1 7.6-8.6 9-9.4 9z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+        <div class="logo-text"><span class="logo-main">FreshMarket</span><span class="logo-sub">Farm to Home</span></div>
+      </a>
+      <ul class="nav-menu" role="list">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="home2.html" class="nav-link active" aria-current="page">Shop</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="nav-icon-btn theme-toggle" aria-label="Toggle dark mode"><span class="theme-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span></button>
+        <button class="nav-icon-btn rtl-toggle rtl-btn" aria-label="Toggle RTL">RTL</button>
+        <a href="contact.html" class="nav-cta">Order Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav-overlay" id="nav-overlay"></div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <div class="mobile-nav-header">
+      <a href="index.html" class="navbar-logo"><div class="logo-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.1 1.4 9-1 7.6-8.6 9-9.4 9z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div><div class="logo-text"><span class="logo-main">FreshMarket</span><span class="logo-sub">Farm to Home</span></div></a>
+      <button class="mobile-close" id="mobile-close" aria-label="Close menu">✕</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="home2.html" class="mobile-nav-link active">Shop</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="services.html" class="mobile-nav-link">Services</a>
+      <a href="blog.html" class="mobile-nav-link">Blog</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </div>
+    <div class="mobile-nav-footer">
+      <a href="contact.html" class="mobile-cta">Order Now</a>
+      <div style="display:flex;gap:0.75rem;justify-content:center;margin-top:1rem;">
+        <button class="theme-toggle nav-icon-btn"><span class="theme-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span></button>
+        <button class="rtl-toggle nav-icon-btn rtl-btn">RTL</button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <!-- ══ SECTION 1: SPLIT HERO ══ -->
+  <section class="split-hero" aria-labelledby="shop-hero-heading">
+    <!-- Left Content -->
+    <div class="split-hero-left">
+      <div class="section-label" data-reveal="fade-right"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> Fresh Daily Arrivals</div>
+      <h1 class="section-title" id="shop-hero-heading" data-reveal="fade-right" data-delay="100" style="font-size:var(--text-6xl);">
+        Your Daily <span class="highlight">Fresh</span><br>Market, Online
+      </h1>
+      <p class="lead" data-reveal="fade-right" data-delay="200" style="margin-bottom:2rem;">Browse 500+ seasonal produce items. Filter by category, origin, and certification. Order by 10 AM for same-day delivery.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;" data-reveal="fade-right" data-delay="300">
+        <a href="#daily-produce" class="btn btn-primary btn-lg">Today's Picks</a>
+        <a href="#bulk" class="btn btn-outline btn-lg">Bulk Orders</a>
+      </div>
+      <!-- Trust badges -->
+      <div style="display:flex;gap:1.5rem;margin-top:2.5rem;flex-wrap:wrap;" data-reveal="fade-up" data-delay="400">
+        <div style="display:flex;align-items:center;gap:0.375rem;font-size:var(--text-sm);color:var(--text-secondary);"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color:var(--color-leaf);"><polyline points="20 6 9 17 4 12"/></svg> Certified Organic</div>
+        <div style="display:flex;align-items:center;gap:0.375rem;font-size:var(--text-sm);color:var(--text-secondary);"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color:var(--color-leaf);"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Free above ₹399</div>
+        <div style="display:flex;align-items:center;gap:0.375rem;font-size:var(--text-sm);color:var(--text-secondary);"><svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="color:var(--color-leaf);"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Freshness Guaranteed</div>
+      </div>
+    </div>
+
+    <!-- Right Image -->
+    <div class="split-hero-right">
+      <img src="assets/images/hero-2.jpg" alt="Abundance of fresh colorful fruits and vegetables at the market" class="zoomable" data-zoom="assets/images/hero-2.jpg">
+
+      <!-- Floating Badges -->
+      <div class="floating-badge" style="top:20%;left:1.5rem;" aria-hidden="true">
+        <span style="color:var(--color-gold);"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+        <div><div style="font-weight:700;font-size:var(--text-sm);color:var(--text-primary);">4.9 Rating</div><div style="font-size:var(--text-xs);color:var(--text-muted);">12K+ Reviews</div></div>
+      </div>
+      <div class="floating-badge" style="top:45%;right:1.5rem;" aria-hidden="true">
+        <span style="color:var(--color-forest);"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
+        <div><div style="font-weight:700;font-size:var(--text-sm);color:var(--text-primary);">Same-Day</div><div style="font-size:var(--text-xs);color:var(--text-muted);">Order by 10 AM</div></div>
+      </div>
+      <div class="floating-badge" style="bottom:20%;left:2rem;" aria-hidden="true">
+        <span style="color:var(--color-leaf);"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.1 1.4 9-1 7.6-8.6 9-9.4 9z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
+        <div><div style="font-weight:700;font-size:var(--text-sm);color:var(--text-primary);">500+ Items</div><div style="font-size:var(--text-xs);color:var(--text-muted);">Daily Fresh Stock</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 2: FRESHNESS GUARANTEE STRIP ══ -->
+  <div class="freshness-strip" role="region" aria-label="Our freshness guarantees">
+    <div class="container">
+      <div class="freshness-items">
+        <div class="freshness-item"><span class="fi-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.1 1.4 9-1 7.6-8.6 9-9.4 9z"/></svg></span>Pesticide-Free</div>
+        <div class="freshness-divider" aria-hidden="true"></div>
+        <div class="freshness-item"><span class="fi-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>Same-Day Delivery</div>
+        <div class="freshness-divider" aria-hidden="true"></div>
+        <div class="freshness-item"><span class="fi-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>Cold Chain Maintained</div>
+        <div class="freshness-divider" aria-hidden="true"></div>
+        <div class="freshness-item"><span class="fi-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></span>Eco Packaging</div>
+        <div class="freshness-divider" aria-hidden="true"></div>
+        <div class="freshness-item"><span class="fi-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>Freshness Guarantee</div>
+        <div class="freshness-divider" aria-hidden="true"></div>
+        <div class="freshness-item"><span class="fi-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>FSSAI Certified</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 3: DAILY PRODUCE + FILTER ══ -->
+  <section class="section bg-primary" id="daily-produce" aria-labelledby="daily-heading">
+    <div class="container">
+      <div class="section-header" data-reveal="fade-up">
+        <div class="section-label"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v6"/><path d="M4.93 10.93l4.24 4.24"/><path d="M2 18h20"/><path d="M20 18a8 8 0 0 0-16 0"/></svg> Daily Fresh</div>
+        <h2 class="section-title" id="daily-heading">Today's Best <span class="highlight">Picks</span></h2>
+        <p class="section-subtitle">Harvested this morning, delivered to you tonight.</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="product-grid-filters" role="group" aria-label="Product category filters" data-reveal="fade-up" data-delay="100">
+        <button class="tag active" data-filter="all" id="filter-all">All</button>
+        <button class="tag" data-filter="vegetables" id="filter-veg">Vegetables</button>
+        <button class="tag" data-filter="fruits" id="filter-fruit">Fruits</button>
+        <button class="tag" data-filter="herbs" id="filter-herbs">Herbs</button>
+        <button class="tag" data-filter="organic" id="filter-organic">Organic</button>
+        <button class="tag" data-filter="specials" id="filter-specials">Specials</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="grid-auto" id="products-grid">
+
+        <div class="product-card" data-category="vegetables,organic" data-reveal="fade-up" data-delay="100">
+          <div class="product-card-img"><div style="width:100%;height:100%;background:var(--color-forest-50);display:flex;align-items:center;justify-content:center;color:var(--color-forest);"><svg class="icon-svg icon-svg-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 11a8 8 0 0 0 16 0H4z"/><path d="M6 9c0-3 3-5 6-5s6 2 6 5"/></svg></div>
+            <div class="product-card-badges"><span class="badge badge-leaf">Organic</span></div>
+            <button class="product-card-wishlist" aria-label="Add to wishlist"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-category">Leafy Greens</div>
+            <h3 class="product-name">Baby Spinach Bundle</h3>
+            <div class="product-origin"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Ooty Farms, Tamil Nadu</div>
+            <div class="stars" aria-label="4.8 stars">★★★★☆</div>
+            <div class="product-footer">
+              <div class="product-price"><span class="price-current">₹45</span><span class="price-unit">/250g</span></div>
+              <button class="btn-cart" aria-label="Add Baby Spinach to cart"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="fruits" data-reveal="fade-up" data-delay="150">
+          <div class="product-card-img"><div style="width:100%;height:100%;background:#FFF7ED;display:flex;align-items:center;justify-content:center;color:#C2410C;"><svg class="icon-svg icon-svg-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="13" r="9"/><path d="M12 4V2"/><path d="M10 2h4"/><path d="M12 13l3-3"/></svg></div>
+            <div class="product-card-badges"><span class="badge badge-terra">Seasonal</span></div>
+            <button class="product-card-wishlist" aria-label="Add to wishlist"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-category">Citrus</div>
+            <h3 class="product-name">Nagpur Oranges</h3>
+            <div class="product-origin"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Nagpur, Maharashtra</div>
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <div class="product-footer">
+              <div class="product-price"><span class="price-current">₹80</span><span class="price-old">₹110</span><span class="price-unit">/kg</span></div>
+              <button class="btn-cart" aria-label="Add Nagpur Oranges to cart"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="vegetables" data-reveal="fade-up" data-delay="200">
+          <div class="product-card-img"><div style="width:100%;height:100%;background:#FFF7ED;display:flex;align-items:center;justify-content:center;color:#EF4444;"><svg class="icon-svg icon-svg-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="13" r="8"/><path d="M12 5V2"/></svg></div>
+            <div class="product-card-badges"><span class="badge badge-leaf">Farm Direct</span></div>
+            <button class="product-card-wishlist" aria-label="Add to wishlist"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-category">Tomatoes</div>
+            <h3 class="product-name">Cherry Tomatoes</h3>
+            <div class="product-origin"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Pune, Maharashtra</div>
+            <div class="stars" aria-label="4.9 stars">★★★★★</div>
+            <div class="product-footer">
+              <div class="product-price"><span class="price-current">₹60</span><span class="price-unit">/500g</span></div>
+              <button class="btn-cart" aria-label="Add Cherry Tomatoes to cart"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="herbs,organic" data-reveal="fade-up" data-delay="250">
+          <div class="product-card-img"><div style="width:100%;height:100%;background:var(--color-leaf-light);display:flex;align-items:center;justify-content:center;color:var(--color-leaf);"><svg class="icon-svg icon-svg-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.1 1.4 9-1 7.6-8.6 9-9.4 9z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+            <div class="product-card-badges"><span class="badge badge-leaf">Organic</span></div>
+            <button class="product-card-wishlist" aria-label="Add to wishlist"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-category">Herbs</div>
+            <h3 class="product-name">Fresh Basil Bunch</h3>
+            <div class="product-origin"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Bangalore, Karnataka</div>
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <div class="product-footer">
+              <div class="product-price"><span class="price-current">₹35</span><span class="price-unit">/bunch</span></div>
+              <button class="btn-cart" aria-label="Add Fresh Basil to cart"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="fruits,specials" data-reveal="fade-up" data-delay="300">
+          <div class="product-card-img"><div style="width:100%;height:100%;background:#FEF9C3;display:flex;align-items:center;justify-content:center;color:#CA8A04;"><svg class="icon-svg icon-svg-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 9a6 6 0 0 0-6 6c0 4 3 7 6 7s6-3 6-7a6 6 0 0 0-6-6z"/><path d="M12 2l-2 5h4l-2-5z"/></svg></div>
+            <div class="product-card-badges"><span class="badge badge-gold">Special</span></div>
+            <button class="product-card-wishlist" aria-label="Add to wishlist"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-category">Tropical</div>
+            <h3 class="product-name">Sweet Pineapple</h3>
+            <div class="product-origin"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Tripura, Northeast</div>
+            <div class="stars" aria-label="4.7 stars">★★★★☆</div>
+            <div class="product-footer">
+              <div class="product-price"><span class="price-current">₹75</span><span class="price-unit">/piece</span></div>
+              <button class="btn-cart" aria-label="Add Sweet Pineapple to cart"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="vegetables,organic" data-reveal="fade-up" data-delay="350">
+          <div class="product-card-img"><div style="width:100%;height:100%;background:var(--color-forest-50);display:flex;align-items:center;justify-content:center;color:#EA580C;"><svg class="icon-svg icon-svg-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M2.27 21.73a2.41 2.41 0 0 0 3.4 0l13.1-13.1a6 6 0 0 0-8.49-8.48L3.68 13.24a6 6 0 0 0-1.41 8.49z"/></svg></div>
+            <div class="product-card-badges"><span class="badge badge-leaf">Organic</span><span class="badge badge-green">New</span></div>
+            <button class="product-card-wishlist" aria-label="Add to wishlist"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-category">Root Vegetables</div>
+            <h3 class="product-name">Purple Carrots</h3>
+            <div class="product-origin"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Himachal Pradesh</div>
+            <div class="stars" aria-label="4.8 stars">★★★★★</div>
+            <div class="product-footer">
+              <div class="product-price"><span class="price-current">₹55</span><span class="price-old">₹80</span><span class="price-unit">/kg</span></div>
+              <button class="btn-cart" aria-label="Add Purple Carrots to cart"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 4: FARM SOURCING MAP ══ -->
+  <section class="section" style="background:var(--bg-secondary);" id="farms" aria-labelledby="farms-heading">
+    <div class="container">
+      <div class="section-header text-center" data-reveal="fade-up">
+        <div class="section-label"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Our Source Network</div>
+        <h2 class="section-title" id="farms-heading">Farm <span class="highlight">Sourcing</span> Partners</h2>
+        <p class="section-subtitle">We partner with 50+ certified organic farms across India, ensuring every item is traceable to its exact origin.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;" data-stagger="0.1">
+
+        <div class="farm-card" data-reveal="fade-up" data-delay="100">
+          <div class="farm-card-header">
+            <div class="farm-avatar"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v20"/><path d="M8 6l4-2 4 2"/><path d="M7 10l5-2 5 2"/></svg></div>
+            <div>
+              <div style="font-family:var(--font-serif);font-size:var(--text-xl);color:white;font-weight:600;">Green Valley Organics</div>
+              <div style="font-size:var(--text-xs);color:rgba(255,255,255,0.85);"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Ooty, Tamil Nadu</div>
+            </div>
+          </div>
+          <div style="padding:1.5rem;">
+            <p style="font-size:var(--text-sm);color:var(--text-secondary);margin-bottom:1rem;">Specializing in leafy greens, herbs, and alpine vegetables at 2400m elevation. Family-operated since 1998.</p>
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+              <span class="badge badge-leaf">Greens</span><span class="badge badge-leaf">Herbs</span><span class="badge badge-green">Certified</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="farm-card" data-reveal="fade-up" data-delay="200">
+          <div class="farm-card-header">
+            <div class="farm-avatar"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="13" r="9"/><path d="M12 4V2"/><path d="M10 2h4"/></svg></div>
+            <div>
+              <div style="font-family:var(--font-serif);font-size:var(--text-xl);color:white;font-weight:600;">Citrus Sun Orchards</div>
+              <div style="font-size:var(--text-xs);color:rgba(255,255,255,0.85);"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Nagpur, Maharashtra</div>
+            </div>
+          </div>
+          <div style="padding:1.5rem;">
+            <p style="font-size:var(--text-sm);color:var(--text-secondary);margin-bottom:1rem;">Famous for the world-renowned GI-tagged Nagpur oranges and tropical citrus varieties grown over 200 acres.</p>
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+              <span class="badge badge-terra">Citrus</span><span class="badge badge-gold">Tropical</span><span class="badge badge-green">GI Tag</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="farm-card" data-reveal="fade-up" data-delay="300">
+          <div class="farm-card-header">
+            <div class="farm-avatar"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 13v8"/><path d="M7 11.5a4.5 4.5 0 0 1 3-4.24 5 5 0 0 1 9.5 1.74 4.5 4.5 0 0 1-2.5 8h-7a4.5 4.5 0 0 1-3-5.5z"/></svg></div>
+            <div>
+              <div style="font-family:var(--font-serif);font-size:var(--text-xl);color:white;font-weight:600;">Himalayan Harvest Co.</div>
+              <div style="font-size:var(--text-xs);color:rgba(255,255,255,0.85);"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Himachal Pradesh</div>
+            </div>
+          </div>
+          <div style="padding:1.5rem;">
+            <p style="font-size:var(--text-sm);color:var(--text-secondary);margin-bottom:1rem;">High-altitude organic vegetables including rare purple varieties, baby vegetables, and heritage cultivars.</p>
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+              <span class="badge badge-leaf">Root Veg</span><span class="badge badge-green">Rare Varieties</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center" style="margin-top:2rem;" data-reveal="fade-up">
+        <a href="about.html#farms" class="btn btn-outline btn-lg">View All Partner Farms</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 5: DELIVERY COVERAGE ══ -->
+  <section class="section bg-primary" id="delivery" aria-labelledby="delivery-heading">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
+
+        <div data-reveal="fade-right">
+          <div class="section-label"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Fast Delivery</div>
+          <h2 class="section-title" id="delivery-heading">We Deliver <span class="highlight">Everywhere</span></h2>
+          <p style="color:var(--text-secondary);margin-bottom:2rem;line-height:var(--lh-relaxed);">Our refrigerated delivery network covers 120+ pincodes across the city. Check if we deliver to your area and choose the plan that works for you.</p>
+          <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem;">
+            <div style="display:flex;gap:1rem;align-items:center;">
+              <span style="color:var(--color-gold);"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+              <div><strong style="color:var(--text-primary);">Express (2-4 hrs)</strong> — Guaranteed fresh from harvest to door</div>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:center;">
+              <span style="color:var(--color-leaf);"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+              <div><strong style="color:var(--text-primary);">Scheduled</strong> — Choose your preferred morning or evening slot</div>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:center;">
+              <span style="color:var(--color-forest);"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21.5 2v6h-6"/><path d="M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg></span>
+              <div><strong style="color:var(--text-primary);">Subscription</strong> — Weekly or bi-weekly automatic delivery</div>
+            </div>
+          </div>
+          <a href="services.html" class="btn btn-primary btn-lg">View All Plans</a>
+        </div>
+
+        <div data-reveal="fade-left">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <div class="coverage-zone" data-reveal="zoom-in" data-delay="100">
+              <div style="margin-bottom:0.5rem;color:var(--color-forest);"><svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="6" x2="9" y2="6.01"/><line x1="15" y1="6" x2="15" y2="6.01"/><line x1="9" y1="10" x2="9" y2="10.01"/><line x1="15" y1="10" x2="15" y2="10.01"/><line x1="9" y1="14" x2="9" y2="14.01"/><line x1="15" y1="14" x2="15" y2="14.01"/><line x1="9" y1="18" x2="15" y2="18"/></svg></div>
+              <h3 style="font-family:var(--font-serif);font-size:var(--text-lg);color:var(--text-primary);margin-bottom:0.25rem;">City Centre</h3>
+              <div style="font-size:var(--text-sm);color:var(--color-leaf);font-weight:600;">Free Delivery</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted);margin-top:0.25rem;">2-4 hour window</div>
+            </div>
+            <div class="coverage-zone" data-reveal="zoom-in" data-delay="200">
+              <div style="margin-bottom:0.5rem;color:var(--color-leaf);"><svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+              <h3 style="font-family:var(--font-serif);font-size:var(--text-lg);color:var(--text-primary);margin-bottom:0.25rem;">Suburbs</h3>
+              <div style="font-size:var(--text-sm);color:var(--color-leaf);font-weight:600;">₹49 Delivery</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted);margin-top:0.25rem;">4-6 hour window</div>
+            </div>
+            <div class="coverage-zone" data-reveal="zoom-in" data-delay="300">
+              <div style="margin-bottom:0.5rem;color:#CA8A04;"><svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v20"/><path d="M8 6l4-2 4 2"/><path d="M7 10l5-2 5 2"/></svg></div>
+              <h3 style="font-family:var(--font-serif);font-size:var(--text-lg);color:var(--text-primary);margin-bottom:0.25rem;">Outskirts</h3>
+              <div style="font-size:var(--text-sm);color:var(--color-gold-dark);font-weight:600;">₹79 Delivery</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted);margin-top:0.25rem;">Next-day available</div>
+            </div>
+            <div class="coverage-zone" data-reveal="zoom-in" data-delay="400" style="background:var(--color-forest);border-color:var(--color-forest);">
+              <div style="margin-bottom:0.5rem;color:white;"><svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+              <h3 style="font-family:var(--font-serif);font-size:var(--text-lg);color:white;margin-bottom:0.25rem;">Nationwide</h3>
+              <div style="font-size:var(--text-sm);color:var(--color-gold);font-weight:600;">Bulk Orders</div>
+              <div style="font-size:var(--text-xs);color:rgba(255,255,255,0.8);margin-top:0.25rem;">Custom pricing</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 6: BLOG TEASER ══ -->
+  <section class="section" style="background:var(--bg-secondary);" id="blog-teaser" aria-labelledby="blog-teaser-heading">
+    <div class="container">
+      <div class="section-header flex-between" data-reveal="fade-up">
+        <div>
+          <div class="section-label"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1m2 13a2 2 0 0 1-2-2V7m2 13a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/></svg> Fresh From Our Kitchen</div>
+          <h2 class="section-title" id="blog-teaser-heading">Latest <span class="highlight">Articles</span></h2>
+        </div>
+        <a href="blog.html" class="btn btn-outline" style="flex-shrink:0;">View All Posts</a>
+      </div>
+
+      <div class="grid-3">
+        <article class="blog-card" data-reveal="fade-up" data-delay="100">
+          <div class="blog-card-img" style="background:var(--color-forest-50);display:flex;align-items:center;justify-content:center;color:var(--color-forest);"><svg class="icon-svg icon-svg-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 11a8 8 0 0 0 16 0H4z"/><path d="M6 9c0-3 3-5 6-5s6 2 6 5"/></svg></div>
+          <div class="blog-card-body">
+            <div class="blog-meta">
+              <span class="blog-meta-item"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Aug 10, 2026</span>
+              <span class="blog-meta-item"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 5 min read</span>
+            </div>
+            <h3 class="blog-title"><a href="blog-details.html">10 Seasonal Vegetables You Should Eat This Monsoon</a></h3>
+            <p class="blog-excerpt clamp-3">Monsoon brings a special bounty of nutrition-dense vegetables that strengthen immunity and fight seasonal illnesses...</p>
+            <a href="blog-details.html" class="blog-read-more">Read Article →</a>
+          </div>
+        </article>
+
+        <article class="blog-card" data-reveal="fade-up" data-delay="200">
+          <div class="blog-card-img" style="background:#FFF7ED;display:flex;align-items:center;justify-content:center;color:#C2410C;"><svg class="icon-svg icon-svg-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12h18"/><path d="M5 12a7 7 0 0 0 14 0"/><path d="M8 8v4"/></svg></div>
+          <div class="blog-card-body">
+            <div class="blog-meta">
+              <span class="blog-meta-item"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Aug 7, 2026</span>
+              <span class="blog-meta-item"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 8 min read</span>
+            </div>
+            <h3 class="blog-title"><a href="blog-details.html">Farm-to-Table Recipes Using Only Local Produce</a></h3>
+            <p class="blog-excerpt clamp-3">Discover 5 stunning recipes created exclusively with ingredients from our partner farms in Tamil Nadu and Maharashtra...</p>
+            <a href="blog-details.html" class="blog-read-more">Read Article →</a>
+          </div>
+        </article>
+
+        <article class="blog-card" data-reveal="fade-up" data-delay="300">
+          <div class="blog-card-img" style="background:var(--color-leaf-light);display:flex;align-items:center;justify-content:center;color:var(--color-leaf);"><svg class="icon-svg icon-svg-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v20"/><path d="M8 6l4-2 4 2"/><path d="M7 10l5-2 5 2"/></svg></div>
+          <div class="blog-card-body">
+            <div class="blog-meta">
+              <span class="blog-meta-item"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Aug 3, 2026</span>
+              <span class="blog-meta-item"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 6 min read</span>
+            </div>
+            <h3 class="blog-title"><a href="blog-details.html">The Complete Guide to Identifying Organic Produce</a></h3>
+            <p class="blog-excerpt clamp-3">How do you really know if your vegetables are organic? We break down certification labels, farm practices and what to look for...</p>
+            <a href="blog-details.html" class="blog-read-more">Read Article →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 7: BULK ORDER ENQUIRY ══ -->
+  <section class="section" style="background:var(--grad-warm);" id="bulk" aria-labelledby="bulk-heading">
+    <div class="blob-2" style="top:-60px;right:-60px;" aria-hidden="true"></div>
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:start;">
+
+        <div data-reveal="fade-right">
+          <div class="section-label"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> Wholesale & Restaurant Supply</div>
+          <h2 class="section-title" id="bulk-heading">Bulk Order <span class="highlight">Enquiry</span></h2>
+          <p style="color:var(--text-secondary);margin-bottom:2rem;line-height:var(--lh-relaxed);">Supply your restaurant, hotel, catering business, or institution with guaranteed-fresh organic produce at wholesale rates.</p>
+          <div style="display:flex;flex-direction:column;gap:1rem;">
+            <div class="feature-card" style="padding:1.25rem;">
+              <div style="display:flex;gap:1rem;align-items:center;">
+                <span style="color:var(--color-gold);"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+                <div><strong>Up to 40% off retail</strong><p style="font-size:var(--text-sm);color:var(--text-muted);margin:0;">Wholesale pricing for orders above 10kg</p></div>
+              </div>
+            </div>
+            <div class="feature-card" style="padding:1.25rem;">
+              <div style="display:flex;gap:1rem;align-items:center;">
+                <span style="color:var(--color-forest);"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21.5 2v6h-6"/><path d="M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg></span>
+                <div><strong>Standing Order Convenience</strong><p style="font-size:var(--text-sm);color:var(--text-muted);margin:0;">Set weekly recurring orders — we handle the rest</p></div>
+              </div>
+            </div>
+            <div class="feature-card" style="padding:1.25rem;">
+              <div style="display:flex;gap:1rem;align-items:center;">
+                <span style="color:var(--color-leaf);"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg></span>
+                <div><strong>Custom Produce Lists</strong><p style="font-size:var(--text-sm);color:var(--text-muted);margin:0;">Tell us exactly what you need, we source it fresh</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div data-reveal="fade-left">
+          <div style="background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-2xl);padding:2.5rem;box-shadow:var(--shadow-md);">
+            <h3 style="font-family:var(--font-serif);font-size:var(--text-2xl);color:var(--text-primary);margin-bottom:1.5rem;">Get a Quote</h3>
+            <form data-validate action="#" method="post" novalidate aria-label="Bulk order enquiry form">
+              <div class="form-group">
+                <label for="bulk-name" class="form-label">Full Name <span class="required">*</span></label>
+                <input type="text" id="bulk-name" name="name" class="form-control" placeholder="Your full name" data-validate="required" data-required-msg="Please enter your name">
+                <div class="form-error" id="bulk-name-error"></div>
+              </div>
+              <div class="form-group">
+                <label for="bulk-biz" class="form-label">Business Name <span class="required">*</span></label>
+                <input type="text" id="bulk-biz" name="business" class="form-control" placeholder="Restaurant / Hotel / Catering..." data-validate="required" data-required-msg="Please enter your business name">
+                <div class="form-error" id="bulk-biz-error"></div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                <div class="form-group">
+                  <label for="bulk-email" class="form-label">Email <span class="required">*</span></label>
+                  <input type="email" id="bulk-email" name="email" class="form-control" placeholder="you@business.com" data-validate="required|email">
+                  <div class="form-error" id="bulk-email-error"></div>
+                </div>
+                <div class="form-group">
+                  <label for="bulk-phone" class="form-label">Phone <span class="required">*</span></label>
+                  <input type="tel" id="bulk-phone" name="phone" class="form-control" placeholder="+91 XXXXX XXXXX" data-validate="required">
+                  <div class="form-error" id="bulk-phone-error"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="bulk-items" class="form-label">Required Items</label>
+                <textarea id="bulk-items" name="items" class="form-control" rows="3" placeholder="E.g. 50kg tomatoes, 20kg onions, 10kg leafy greens weekly..."></textarea>
+              </div>
+              <div class="form-group">
+                <label for="bulk-freq" class="form-label">Order Frequency</label>
+                <select id="bulk-freq" name="frequency" class="form-control">
+                  <option value="">Select frequency</option>
+                  <option value="daily">Daily</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="biweekly">Bi-weekly</option>
+                  <option value="monthly">Monthly</option>
+                  <option value="onetime">One-time</option>
+                </select>
+              </div>
+              <div class="form-success" style="display:none;background:var(--color-forest-50);border:1px solid var(--color-leaf);border-radius:var(--radius-lg);padding:1rem;margin-bottom:1rem;color:var(--color-forest);font-size:var(--text-sm);">✓ Thank you! Our bulk orders team will contact you within 24 hours.</div>
+              <button type="submit" class="btn btn-primary w-full btn-lg">Request Quote</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo"><div class="logo-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.1 1.4 9-1 7.6-8.6 9-9.4 9z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div><div class="logo-text"><span class="logo-main">FreshMarket</span><span class="logo-sub">Farm to Home</span></div></a>
+        <p>Bringing nature's finest harvest straight to your table. 100% organic, pesticide-free, same-day fresh delivery since 2018.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-link" aria-label="Facebook"><svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" class="footer-social-link" aria-label="Instagram"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></a>
+          <a href="#" class="footer-social-link" aria-label="Twitter"><svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+          <a href="#" class="footer-social-link" aria-label="YouTube"><svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="home2.html" class="footer-link">Shop</a></li>
+          <li><a href="about.html" class="footer-link">About Us</a></li>
+          <li><a href="services.html" class="footer-link">Services</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul class="footer-links">
+          <li><a href="#daily-produce" class="footer-link">Vegetables</a></li>
+          <li><a href="#fruits" class="footer-link">Fruits</a></li>
+          <li><a href="#herbs" class="footer-link">Herbs</a></li>
+          <li><a href="#specials" class="footer-link">Seasonal</a></li>
+          <li><a href="#bulk" class="footer-link">Bulk Orders</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item"><div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div>123 Green Farm Road, Harvest Valley, CA 90210</div></div>
+        <div class="footer-contact-item"><div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><a href="tel:+18003734765" style="color:inherit;">+1 800 FRESH MK</a></div></div>
+        <div class="footer-contact-item"><div class="icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><a href="mailto:hello@freshmarket.com" style="color:inherit;">hello@freshmarket.com</a></div></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 FreshMarket. All rights reserved.</p>
+      <div class="footer-legal-links">
+        <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+        <a href="terms.html" class="footer-legal-link">Terms</a>
+        <a href="sitemap.html" class="footer-legal-link">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/slider.js"></script>
+<script src="assets/js/animations.js"></script>
+<script src="assets/js/utils.js"></script>
+</body>
+</html>
