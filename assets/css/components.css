@@ -42,7 +42,7 @@ header {
 
 /* Transparent Navbar (over hero) */
 .navbar.transparent {
-  background: transparent;
+  background: linear-gradient(to bottom, rgba(10, 45, 25, 0.9) 0%, rgba(10, 45, 25, 0.6) 55%, rgba(10, 45, 25, 0.15) 100%);
   border-bottom-color: transparent;
   box-shadow: none;
 }
@@ -60,6 +60,8 @@ header {
   background: rgba(13, 31, 20, 0.95);
   border-bottom: 1px solid var(--border-color);
 }
+
+[data-theme="dark"] .navbar.scrolled .logo-text .logo-main { color: white; }
 
 /* Logo */
 .navbar-logo {
@@ -79,6 +81,7 @@ header {
   align-items: center;
   justify-content: center;
   font-size: 1.25rem;
+  color: white;
   box-shadow: var(--shadow-green);
   transition: transform var(--dur-normal) var(--ease-bounce);
 }
@@ -290,6 +293,71 @@ header {
 }
 
 .navbar.transparent .hamburger .bar { background: white; }
+
+/* Transparent Navbar Active Link Contrast Fix */
+.navbar.transparent .nav-link.active {
+  color: var(--color-forest) !important;
+}
+.navbar.transparent .nav-link.active:hover {
+  color: var(--color-forest) !important;
+  background: var(--color-leaf-light) !important;
+}
+[data-theme="dark"] .navbar.transparent .nav-link.active {
+  color: var(--color-leaf) !important;
+}
+[data-theme="dark"] .navbar.transparent .nav-link.active:hover {
+  color: var(--color-leaf) !important;
+  background: rgba(101,163,13,0.15) !important;
+}
+
+/* Light Hero Transparent Navbar Override (e.g. for split hero in light mode) */
+.navbar.transparent.light-hero-nav {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 60%, rgba(255, 255, 255, 0) 100%);
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
+.navbar.transparent.light-hero-nav .logo-text .logo-main {
+  color: var(--color-forest);
+}
+.navbar.transparent.light-hero-nav .logo-text .logo-sub {
+  color: var(--color-leaf);
+}
+.navbar.transparent.light-hero-nav .nav-link {
+  color: var(--text-primary);
+}
+.navbar.transparent.light-hero-nav .nav-link:hover {
+  color: var(--color-forest);
+  background: rgba(20, 83, 45, 0.05);
+}
+.navbar.transparent.light-hero-nav .nav-icon-btn {
+  color: var(--text-primary);
+}
+.navbar.transparent.light-hero-nav .hamburger .bar {
+  background: var(--text-primary);
+}
+
+[data-theme="dark"] .navbar.transparent.light-hero-nav {
+  background: linear-gradient(to bottom, rgba(10, 45, 25, 0.9) 0%, rgba(10, 45, 25, 0.6) 55%, rgba(10, 45, 25, 0.15) 100%);
+}
+[data-theme="dark"] .navbar.transparent.light-hero-nav .logo-text .logo-main {
+  color: white;
+}
+[data-theme="dark"] .navbar.transparent.light-hero-nav .logo-text .logo-sub {
+  color: rgba(255,255,255,0.8);
+}
+[data-theme="dark"] .navbar.transparent.light-hero-nav .nav-link {
+  color: rgba(255,255,255,0.9);
+}
+[data-theme="dark"] .navbar.transparent.light-hero-nav .nav-link:hover {
+  color: white;
+  background: rgba(255,255,255,0.1);
+}
+[data-theme="dark"] .navbar.transparent.light-hero-nav .nav-icon-btn {
+  color: rgba(255,255,255,0.9);
+}
+[data-theme="dark"] .navbar.transparent.light-hero-nav .hamburger .bar {
+  background: white;
+}
 
 .hamburger.open .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.open .bar:nth-child(2) { opacity: 0; transform: scaleX(0); }
