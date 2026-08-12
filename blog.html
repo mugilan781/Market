@@ -139,20 +139,20 @@
   <!-- ══ SECTION 3: LATEST POSTS GRID ══ -->
   <section class="section" style="background:var(--bg-secondary);" aria-labelledby="latest-posts-heading">
     <div class="container">
-      <div class="section-header flex-between" data-reveal="fade-up">
-        <div>
-          <div class="section-label"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1m2 13a2 2 0 0 1-2-2V7m2 13a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/></svg> Latest Articles</div>
-          <h2 class="section-title" id="latest-posts-heading">From Our <span class="highlight">Kitchen &amp; Fields</span></h2>
-        </div>
+      <div class="section-header text-center" data-reveal="fade-up">
+        <div class="section-label" style="justify-content:center;"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1m2 13a2 2 0 0 1-2-2V7m2 13a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/></svg> Latest Articles</div>
+        <h2 class="section-title" id="latest-posts-heading">From Our <span class="highlight">Kitchen &amp; Fields</span></h2>
       </div>
 
       <div id="blog-posts-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
 
         <article class="blog-card" data-category="recipes" data-search-item="Farm-to-Table Recipes local produce vegetables" data-reveal="fade-up" data-delay="100">
-          <div class="blog-card-img" style="background:#FFF7ED;display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="assets/images/gen_home2_recipes.png" alt="Farm to Table Recipes" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="blog-card-img" style="background:#FFF7ED;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+            <img src="assets/images/gen_home2_recipes.png" alt="Farm to Table Recipes" style="width:100%;height:100%;object-fit:cover;">
+            <div class="blog-card-cat"><span class="badge badge-terra">Recipes</span></div>
+          </div>
           <div class="blog-card-body">
             <div class="blog-meta"><span class="blog-meta-item">Aug 7, 2026</span><span class="blog-meta-item">8 min</span></div>
-            <div class="blog-card-cat"><span class="badge badge-terra">Recipes</span></div>
             <h3 class="blog-title"><a href="blog-details.html">Farm-to-Table Recipes Using Only Local Produce</a></h3>
             <p class="blog-excerpt clamp-3">Discover 5 stunning recipes created exclusively with ingredients from our partner farms in Tamil Nadu and Maharashtra.</p>
             <a href="blog-details.html" class="blog-read-more">Read More →</a>
@@ -160,10 +160,12 @@
         </article>
 
         <article class="blog-card" data-category="organic" data-search-item="organic produce certification how to identify" data-reveal="fade-up" data-delay="200">
-          <div class="blog-card-img" style="background:var(--color-leaf-light);display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="assets/images/gen_home2_organic.png" alt="Organic Produce Guide" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="blog-card-img" style="background:var(--color-leaf-light);display:flex;align-items:center;justify-content:center;overflow:hidden;">
+            <img src="assets/images/gen_home2_organic.png" alt="Organic Produce Guide" style="width:100%;height:100%;object-fit:cover;">
+            <div class="blog-card-cat"><span class="badge badge-leaf">Organic Tips</span></div>
+          </div>
           <div class="blog-card-body">
             <div class="blog-meta"><span class="blog-meta-item">Aug 3, 2026</span><span class="blog-meta-item">6 min</span></div>
-            <div class="blog-card-cat"><span class="badge badge-leaf">Organic Tips</span></div>
             <h3 class="blog-title"><a href="blog-details.html">The Complete Guide to Identifying Organic Produce</a></h3>
             <p class="blog-excerpt clamp-3">How do you really know if your vegetables are organic? We break down certification labels, farm practices and warning signs.</p>
             <a href="blog-details.html" class="blog-read-more">Read More →</a>
@@ -171,10 +173,12 @@
         </article>
 
         <article class="blog-card" data-category="nutrition" data-search-item="immunity boost vegetables health benefits" data-reveal="fade-up" data-delay="300">
-          <div class="blog-card-img" style="background:var(--color-forest-50);display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="assets/images/gen_blog_immunity.png" alt="Immunity Boosting Vegetables" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="blog-card-img" style="background:var(--color-forest-50);display:flex;align-items:center;justify-content:center;overflow:hidden;">
+            <img src="assets/images/gen_blog_immunity.png" alt="Immunity Boosting Vegetables" style="width:100%;height:100%;object-fit:cover;">
+            <div class="blog-card-cat"><span class="badge badge-green">Nutrition</span></div>
+          </div>
           <div class="blog-card-body">
             <div class="blog-meta"><span class="blog-meta-item">Jul 28, 2026</span><span class="blog-meta-item">7 min</span></div>
-            <div class="blog-card-cat"><span class="badge badge-green">Nutrition</span></div>
             <h3 class="blog-title"><a href="blog-details.html">Top 8 Vegetables That Naturally Boost Your Immunity</a></h3>
             <p class="blog-excerpt clamp-3">Science-backed guide to the most immune-boosting vegetables you should include in your weekly meals.</p>
             <a href="blog-details.html" class="blog-read-more">Read More →</a>
@@ -182,10 +186,12 @@
         </article>
 
         <article class="blog-card" data-category="farming" data-search-item="organic farming family farmer story india" data-reveal="fade-up" data-delay="100">
-          <div class="blog-card-img" style="background:var(--color-terra-light);display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="assets/images/gen_blog_farm.png" alt="A Day at the Farm" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="blog-card-img" style="background:var(--color-terra-light);display:flex;align-items:center;justify-content:center;overflow:hidden;">
+            <img src="assets/images/gen_blog_farm.png" alt="A Day at the Farm" style="width:100%;height:100%;object-fit:cover;">
+            <div class="blog-card-cat"><span class="badge badge-terra">Farm Story</span></div>
+          </div>
           <div class="blog-card-body">
             <div class="blog-meta"><span class="blog-meta-item">Jul 22, 2026</span><span class="blog-meta-item">5 min</span></div>
-            <div class="blog-card-cat"><span class="badge badge-terra">Farm Story</span></div>
             <h3 class="blog-title"><a href="blog-details.html">Meet the Farmers: A Day at Green Valley Organics</a></h3>
             <p class="blog-excerpt clamp-3">We spent 24 hours at one of our oldest partner farms in Ooty to understand what it takes to grow truly organic produce.</p>
             <a href="blog-details.html" class="blog-read-more">Read More →</a>
@@ -193,10 +199,12 @@
         </article>
 
         <article class="blog-card" data-category="seasonal" data-search-item="mango season alphonso summer fruits" data-reveal="fade-up" data-delay="200">
-          <div class="blog-card-img" style="background:#FEF9C3;display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="assets/images/gen_blog_mango.png" alt="Mango Varieties" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="blog-card-img" style="background:#FEF9C3;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+            <img src="assets/images/gen_blog_mango.png" alt="Mango Varieties" style="width:100%;height:100%;object-fit:cover;">
+            <div class="blog-card-cat"><span class="badge badge-gold">Seasonal</span></div>
+          </div>
           <div class="blog-card-body">
             <div class="blog-meta"><span class="blog-meta-item">Jul 15, 2026</span><span class="blog-meta-item">4 min</span></div>
-            <div class="blog-card-cat"><span class="badge badge-gold">Seasonal</span></div>
             <h3 class="blog-title"><a href="blog-details.html">Mango Season is Here: A Complete Variety Guide</a></h3>
             <p class="blog-excerpt clamp-3">Alphonso, Kesar, Dasheri, Langra — we break down India's best mango varieties and what makes each special.</p>
             <a href="blog-details.html" class="blog-read-more">Read More →</a>
@@ -204,10 +212,12 @@
         </article>
 
         <article class="blog-card" data-category="recipes" data-search-item="smoothie bowl fruit recipe breakfast healthy" data-reveal="fade-up" data-delay="300">
-          <div class="blog-card-img" style="background:#FFF7ED;display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="assets/images/blog_smoothie.jpg" alt="Smoothie Bowls" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="blog-card-img" style="background:#FFF7ED;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+            <img src="assets/images/blog_smoothie.jpg" alt="Smoothie Bowls" style="width:100%;height:100%;object-fit:cover;">
+            <div class="blog-card-cat"><span class="badge badge-terra">Recipes</span></div>
+          </div>
           <div class="blog-card-body">
             <div class="blog-meta"><span class="blog-meta-item">Jul 8, 2026</span><span class="blog-meta-item">6 min</span></div>
-            <div class="blog-card-cat"><span class="badge badge-terra">Recipes</span></div>
             <h3 class="blog-title"><a href="blog-details.html">5 Vibrant Smoothie Bowls for a Healthy Monsoon Morning</a></h3>
             <p class="blog-excerpt clamp-3">Start your day right with these colourful, nutrient-packed smoothie bowls made entirely from seasonal organic fruits.</p>
             <a href="blog-details.html" class="blog-read-more">Read More →</a>
@@ -288,35 +298,7 @@
     </div>
   </section>
 
-  <!-- ══ SECTION 7: TAG CLOUD ══ -->
-  <section class="section bg-primary" aria-labelledby="tags-heading">
-    <div class="container">
-      <div class="section-header text-center" data-reveal="fade-up">
-        <div class="section-label"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> Explore Topics</div>
-        <h2 class="section-title" id="tags-heading">Trending <span class="highlight">Tags</span></h2>
-      </div>
-      <div class="tag-cloud" style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;" data-reveal="fade-up" data-delay="100" aria-label="Popular blog topics">
-        <button class="tag active">Organic Farming</button>
-        <button class="tag">Healthy Recipes</button>
-        <button class="tag">Tomatoes</button>
-        <button class="tag">Immunity</button>
-        <button class="tag">Monsoon Produce</button>
-        <button class="tag">Brassicas</button>
-        <button class="tag">Seasonal Fruits</button>
-        <button class="tag">Farm Direct</button>
-        <button class="tag">Pesticide-Free</button>
-        <button class="tag">Quick Recipes</button>
-        <button class="tag">Mangoes</button>
-        <button class="tag">Nutrition Facts</button>
-        <button class="tag">Zero Waste</button>
-        <button class="tag">Herbs &amp; Spices</button>
-        <button class="tag">Farmer Stories</button>
-        <button class="tag">Leafy Greens</button>
-        <button class="tag">Summer Picks</button>
-        <button class="tag">Detox</button>
-      </div>
-    </div>
-  </section>
+
 
 </main>
 

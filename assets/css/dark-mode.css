@@ -541,3 +541,28 @@
   background: rgba(20, 83, 45, 0.4);
   color: #4ADE80;
 }
+
+/* ================================================================
+   BLOG SEARCH DARK MODE
+   ================================================================ */
+[data-theme="dark"] .blog-search {
+  background: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-theme="dark"] .blog-search input {
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .blog-search input::placeholder {
+  color: #78716C !important;
+}
+
+[data-theme="dark"] .blog-search button {
+  background: var(--color-forest) !important;
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .blog-search button:hover {
+  background: #22C55E !important;
+}
