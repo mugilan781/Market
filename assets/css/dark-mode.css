@@ -566,3 +566,10 @@
 [data-theme="dark"] .blog-search button:hover {
   background: #22C55E !important;
 }
+
+/* ================================================================
+   CONTACT PAGE PINCODE CHECKER DARK MODE
+   ================================================================ */
+[data-theme="dark"] .pincode-checker button {
+  color: #000000 !important;
+}

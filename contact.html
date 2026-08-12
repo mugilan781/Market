@@ -16,11 +16,21 @@
   <style>
     .contact-card { background:var(--bg-card); border:1px solid var(--border-light); border-radius:var(--radius-2xl); padding:2rem; text-align:center; transition:all var(--dur-normal); box-shadow:var(--shadow-card); }
     .contact-card:hover { border-color:var(--color-leaf); transform:translateY(-4px); box-shadow:var(--shadow-xl); }
-    .chat-bubble { position:fixed; bottom:2rem; right:2rem; background:var(--color-forest); color:white; border:none; border-radius:var(--radius-full); padding:0.875rem 1.5rem; font-size:var(--text-sm); font-weight:600; cursor:pointer; box-shadow:var(--shadow-xl); display:flex; align-items:center; gap:0.5rem; z-index:99; transition:all var(--dur-fast); }
-    .chat-bubble:hover { background:var(--color-forest-600); transform:scale(1.05); }
     .pincode-checker { display:flex; background:var(--bg-card); border:1.5px solid var(--border-color); border-radius:var(--radius-xl); overflow:hidden; max-width:400px; margin-top:1rem; }
     .pincode-checker input { flex:1; border:none; padding:0.75rem 1rem; font-size:var(--text-sm); color:var(--text-primary); outline:none; background:transparent; }
     .pincode-checker button { background:var(--color-forest); color:white; border:none; padding:0.75rem 1.25rem; font-weight:600; cursor:pointer; font-size:var(--text-sm); }
+    
+    /* Brand-Specific Social Buttons */
+    .btn-brand-fb { background:#1877F2 !important; color:#FFFFFF !important; border:none !important; }
+    .btn-brand-fb:hover { background:#166FE5 !important; opacity:0.95; }
+    .btn-brand-ig { background:linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important; color:#FFFFFF !important; border:none !important; }
+    .btn-brand-ig:hover { opacity:0.9; }
+    .btn-brand-tw { background:#1DA1F2 !important; color:#FFFFFF !important; border:none !important; }
+    .btn-brand-tw:hover { background:#1a91da !important; opacity:0.95; }
+    .btn-brand-yt { background:#FF0000 !important; color:#FFFFFF !important; border:none !important; }
+    .btn-brand-yt:hover { background:#cc0000 !important; opacity:0.95; }
+    .btn-brand-wa { background:#25D366 !important; color:#FFFFFF !important; border:none !important; }
+    .btn-brand-wa:hover { background:#20ba5a !important; opacity:0.95; }
   </style>
 </head>
 <body>
@@ -29,8 +39,7 @@
 <div id="page-transition" aria-hidden="true"></div>
 <div class="toast-container" aria-live="polite"></div>
 
-<!-- Floating Live Chat Bubble -->
-<button class="chat-bubble" onclick="window.showToast('Live Chat Support','Connecting you to a representative…','info')" aria-label="Open live chat"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Chat Support</button>
+
 
 <!-- NAVBAR -->
 <header>
@@ -102,7 +111,7 @@
           <div style="display:flex;justify-content:center;align-items:center;margin-bottom:1rem;color:var(--color-forest);" aria-hidden="true"><svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
           <h3 style="font-family:var(--font-serif);font-size:var(--text-xl);color:var(--text-primary);margin-bottom:0.375rem;">Call Us</h3>
           <p style="font-size:var(--text-sm);color:var(--text-secondary);margin-bottom:0.75rem;">Toll-free customer care line</p>
-          <a href="tel:+18003734765" style="font-weight:700;color:var(--color-forest);font-size:var(--text-lg);text-decoration:none;">+1 800 FRESH MK</a>
+          <a href="tel:+18003734765" style="font-weight:700;color:var(--color-forest);font-size:var(--text-lg);text-decoration:none;">+1 (800) 373-4765</a>
           <div style="font-size:var(--text-xs);color:var(--text-muted);margin-top:0.375rem;">Mon–Sat: 6 AM – 8 PM</div>
         </div>
 
@@ -226,16 +235,15 @@
       </div>
 
       <div style="background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-2xl);overflow:hidden;box-shadow:var(--shadow-card);" data-reveal="fade-up" data-delay="100">
-        <div style="height:350px;background:var(--color-forest);display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;position:relative;overflow:hidden;">
-          <img src="assets/images/store_hub.jpg" alt="FreshMarket Harvest Hub Store" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.4;z-index:0;">
-          <div style="display:flex;justify-content:center;align-items:center;margin-bottom:1rem;color:white;position:relative;z-index:1;" aria-hidden="true"><svg class="icon-svg icon-svg-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <h3 style="font-family:var(--font-serif);font-size:var(--text-3xl);color:white;margin-bottom:0.5rem;">FreshMarket Harvest Hub</h3>
-          <p style="color:rgba(255,255,255,0.85);font-size:var(--text-base);">123 Green Farm Road, Harvest Valley, CA 90210</p>
-          <div style="display:flex;gap:1rem;margin-top:1.5rem;">
-            <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-gold btn-sm">Get Directions ↗</a>
-            <a href="tel:+18003734765" class="btn btn-ghost btn-sm">Call Store</a>
-          </div>
-        </div>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.12351234567!2d-122.4194!3d37.7749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1630000000000!5m2!1sen!2sus" 
+          width="100%" 
+          height="400" 
+          style="border:0;display:block;" 
+          allowfullscreen="" 
+          loading="lazy"
+          title="Google Map showing FreshMarket Harvest Hub Store">
+        </iframe>
       </div>
     </div>
   </section>
@@ -268,15 +276,15 @@
   <!-- ══ SECTION 6: SOCIAL MEDIA LINKS ══ -->
   <section class="section bg-primary text-center" aria-labelledby="socials-heading">
     <div class="container">
-      <div class="section-label" data-reveal="fade-up" style="justify-content:center;"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Stay Connected</div>
+      <div class="section-label" data-reveal="fade-up" style="justify-content:center;"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> Stay Connected</div>
       <h2 class="section-title" id="socials-heading" data-reveal="fade-up" data-delay="100">Follow Our <span class="highlight">Farm Journey</span></h2>
       <p class="section-subtitle" data-reveal="fade-up" data-delay="150">Daily farm stories, behind-the-scenes harvest videos, and exclusive flash sales.</p>
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;" data-reveal="fade-up" data-delay="200">
-        <a href="#" class="btn btn-outline" aria-label="Facebook"><svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook</a>
-        <a href="#" class="btn btn-outline" aria-label="Instagram"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg> Instagram</a>
-        <a href="#" class="btn btn-outline" aria-label="Twitter"><svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg> Twitter</a>
-        <a href="#" class="btn btn-outline" aria-label="YouTube"><svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg> YouTube</a>
-        <a href="#" class="btn btn-outline" aria-label="WhatsApp"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg> WhatsApp Channel</a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="btn btn-brand-fb" aria-label="Facebook"><svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook</a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="btn btn-brand-ig" aria-label="Instagram"><svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> Instagram</a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="btn btn-brand-tw" aria-label="Twitter"><svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg> Twitter</a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="btn btn-brand-yt" aria-label="YouTube"><svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.107C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.003 3.003 0 0 0 .515 6.163C0 8.037 0 12 0 12s0 3.963.515 5.837a3.003 3.003 0 0 0 2.107 2.107c1.872.505 9.377.505 9.377.505s7.505 0 9.377-.505a3.003 3.003 0 0 0 2.11-2.107C24 15.963 24 12 24 12s0-3.963-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> YouTube</a>
+        <a href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer" class="btn btn-brand-wa" aria-label="WhatsApp"><svg class="icon-svg" viewBox="0 0 448 512" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg> WhatsApp Channel</a>
       </div>
     </div>
   </section>
@@ -288,7 +296,7 @@
         <div class="section-label" style="color:var(--color-gold);justify-content:center;"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Urgent Order Assistance?</div>
         <h2 class="section-title" id="help-heading" style="color:white;">Need Help With a <span style="color:var(--color-gold);font-style:italic;">Live Order?</span></h2>
         <p style="color:rgba(255,255,255,0.85);max-width:500px;margin:0 auto 2rem;">Our priority support line is active during delivery hours (6 AM – 9 PM daily).</p>
-        <a href="tel:+18003734765" class="btn btn-gold btn-xl"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call Hotline: +1 800 FRESH MK</a>
+        <a href="tel:+18003734765" class="btn btn-gold btn-xl"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call Hotline: +1 (800) 373-4765</a>
       </div>
     </div>
   </section>
