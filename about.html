@@ -179,27 +179,88 @@
         <p class="section-subtitle">Real people growing real food with love and care for the earth.</p>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;">
-        <div class="feature-card" data-reveal="fade-up" data-delay="100">
-          <div style="display:flex;align-items:center;margin-bottom:1rem;color:var(--color-forest);" aria-hidden="true"><svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v20"/><path d="M8 6l4-2 4 2"/><path d="M7 10l5-2 5 2"/></svg></div>
-          <h3 class="feature-title">Ooty Valley Organics</h3>
-          <p class="feature-text">High-altitude brassicas, root vegetables &amp; leafy greens grown in virgin Nilgiri soil.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;" data-stagger="0.1">
+
+        <div class="farm-card" style="overflow:hidden;border-radius:var(--radius-xl);background:var(--bg-card);border:1px solid var(--border-color);transition:transform 0.3s ease, box-shadow 0.3s ease;" data-reveal="fade-up" data-delay="100">
+          <div style="height:210px;position:relative;overflow:hidden;">
+            <img src="assets/images/farmer_ooty.png" alt="Ooty Valley Organics" style="width:100%;height:100%;object-fit:cover;">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(10,25,16,0.88) 0%, rgba(10,25,16,0.35) 55%, transparent 100%);"></div>
+            <div style="position:absolute;bottom:0.85rem;left:1rem;right:1rem;display:flex;align-items:center;gap:0.75rem;z-index:2;">
+              <div style="flex-shrink:0;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.2);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;color:white;"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v20"/><path d="M8 6l4-2 4 2"/><path d="M7 10l5-2 5 2"/></svg></div>
+              <div>
+                <div style="font-family:var(--font-serif);font-size:1.15rem;color:white;font-weight:600;line-height:1.2;text-shadow:0 2px 4px rgba(0,0,0,0.7);">Ooty Valley Organics</div>
+                <div style="font-size:var(--text-xs);color:rgba(255,255,255,0.95);margin-top:2px;text-shadow:0 2px 4px rgba(0,0,0,0.7);"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Nilgiri Hills, Tamil Nadu</div>
+              </div>
+            </div>
+          </div>
+          <div style="padding:1.25rem 1.5rem 1.5rem;">
+            <p style="font-size:var(--text-sm);color:var(--text-secondary);margin-bottom:1rem;line-height:1.5;">High-altitude brassicas, root vegetables &amp; leafy greens grown in virgin Nilgiri soil.</p>
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+              <span class="badge badge-leaf">Brassicas</span><span class="badge badge-green">Root Veg</span><span class="badge badge-leaf">Leafy Greens</span>
+            </div>
+          </div>
         </div>
-        <div class="feature-card" data-reveal="fade-up" data-delay="200">
-          <div style="display:flex;align-items:center;margin-bottom:1rem;color:#C2410C;" aria-hidden="true"><svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="13" r="9"/><path d="M12 4V2"/><path d="M10 2h4"/></svg></div>
-          <h3 class="feature-title">Nagpur Citrus Grove</h3>
-          <p class="feature-text">World-famous GI-tagged oranges and limes cultivated naturally without pesticides.</p>
+
+        <div class="farm-card" style="overflow:hidden;border-radius:var(--radius-xl);background:var(--bg-card);border:1px solid var(--border-color);transition:transform 0.3s ease, box-shadow 0.3s ease;" data-reveal="fade-up" data-delay="200">
+          <div style="height:210px;position:relative;overflow:hidden;">
+            <img src="assets/images/farmer_nagpur.png" alt="Nagpur Citrus Grove" style="width:100%;height:100%;object-fit:cover;">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(10,25,16,0.88) 0%, rgba(10,25,16,0.35) 55%, transparent 100%);"></div>
+            <div style="position:absolute;bottom:0.85rem;left:1rem;right:1rem;display:flex;align-items:center;gap:0.75rem;z-index:2;">
+              <div style="flex-shrink:0;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.2);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;color:white;"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="13" r="9"/><path d="M12 4V2"/><path d="M10 2h4"/></svg></div>
+              <div>
+                <div style="font-family:var(--font-serif);font-size:1.15rem;color:white;font-weight:600;line-height:1.2;text-shadow:0 2px 4px rgba(0,0,0,0.7);">Nagpur Citrus Grove</div>
+                <div style="font-size:var(--text-xs);color:rgba(255,255,255,0.95);margin-top:2px;text-shadow:0 2px 4px rgba(0,0,0,0.7);"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Nagpur, Maharashtra</div>
+              </div>
+            </div>
+          </div>
+          <div style="padding:1.25rem 1.5rem 1.5rem;">
+            <p style="font-size:var(--text-sm);color:var(--text-secondary);margin-bottom:1rem;line-height:1.5;">World-famous GI-tagged oranges and limes cultivated naturally without pesticides.</p>
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+              <span class="badge badge-terra">Citrus</span><span class="badge badge-gold">Pesticide Free</span><span class="badge badge-green">GI Tagged</span>
+            </div>
+          </div>
         </div>
-        <div class="feature-card" data-reveal="fade-up" data-delay="300">
-          <div style="display:flex;align-items:center;margin-bottom:1rem;color:var(--color-leaf);" aria-hidden="true"><svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.1 1.4 9-1 7.6-8.6 9-9.4 9z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
-          <h3 class="feature-title">Western Ghats Herbs</h3>
-          <p class="feature-text">Aromatic mint, coriander, basil, and medicinal herbs watered by pristine natural springs.</p>
+
+        <div class="farm-card" style="overflow:hidden;border-radius:var(--radius-xl);background:var(--bg-card);border:1px solid var(--border-color);transition:transform 0.3s ease, box-shadow 0.3s ease;" data-reveal="fade-up" data-delay="300">
+          <div style="height:210px;position:relative;overflow:hidden;">
+            <img src="assets/images/farmer_herbs.png" alt="Western Ghats Herbs" style="width:100%;height:100%;object-fit:cover;">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(10,25,16,0.88) 0%, rgba(10,25,16,0.35) 55%, transparent 100%);"></div>
+            <div style="position:absolute;bottom:0.85rem;left:1rem;right:1rem;display:flex;align-items:center;gap:0.75rem;z-index:2;">
+              <div style="flex-shrink:0;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.2);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;color:white;"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.1 1.4 9-1 7.6-8.6 9-9.4 9z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+              <div>
+                <div style="font-family:var(--font-serif);font-size:1.15rem;color:white;font-weight:600;line-height:1.2;text-shadow:0 2px 4px rgba(0,0,0,0.7);">Western Ghats Herbs</div>
+                <div style="font-size:var(--text-xs);color:rgba(255,255,255,0.95);margin-top:2px;text-shadow:0 2px 4px rgba(0,0,0,0.7);"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Western Ghats, Karnataka</div>
+              </div>
+            </div>
+          </div>
+          <div style="padding:1.25rem 1.5rem 1.5rem;">
+            <p style="font-size:var(--text-sm);color:var(--text-secondary);margin-bottom:1rem;line-height:1.5;">Aromatic mint, coriander, basil, and medicinal herbs watered by pristine natural springs.</p>
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+              <span class="badge badge-leaf">Herbs</span><span class="badge badge-green">Spring Watered</span><span class="badge badge-leaf">Medicinal</span>
+            </div>
+          </div>
         </div>
-        <div class="feature-card" data-reveal="fade-up" data-delay="400">
-          <div style="display:flex;align-items:center;margin-bottom:1rem;color:var(--icon-gold);" aria-hidden="true"><svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 9a6 6 0 0 0-6 6c0 4 3 7 6 7s6-3 6-7a6 6 0 0 0-6-6z"/><path d="M12 2l-2 5h4l-2-5z"/></svg></div>
-          <h3 class="feature-title">Konkan Tropical Farm</h3>
-          <p class="feature-text">Authentic Alphonso mangoes, pineapples, and coconuts grown along the sunny coast.</p>
+
+        <div class="farm-card" style="overflow:hidden;border-radius:var(--radius-xl);background:var(--bg-card);border:1px solid var(--border-color);transition:transform 0.3s ease, box-shadow 0.3s ease;" data-reveal="fade-up" data-delay="400">
+          <div style="height:210px;position:relative;overflow:hidden;">
+            <img src="assets/images/farmer_konkan.png" alt="Konkan Tropical Farm" style="width:100%;height:100%;object-fit:cover;">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(10,25,16,0.88) 0%, rgba(10,25,16,0.35) 55%, transparent 100%);"></div>
+            <div style="position:absolute;bottom:0.85rem;left:1rem;right:1rem;display:flex;align-items:center;gap:0.75rem;z-index:2;">
+              <div style="flex-shrink:0;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.2);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;color:white;"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 9a6 6 0 0 0-6 6c0 4 3 7 6 7s6-3 6-7a6 6 0 0 0-6-6z"/><path d="M12 2l-2 5h4l-2-5z"/></svg></div>
+              <div>
+                <div style="font-family:var(--font-serif);font-size:1.15rem;color:white;font-weight:600;line-height:1.2;text-shadow:0 2px 4px rgba(0,0,0,0.7);">Konkan Tropical Farm</div>
+                <div style="font-size:var(--text-xs);color:rgba(255,255,255,0.95);margin-top:2px;text-shadow:0 2px 4px rgba(0,0,0,0.7);"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:12px;height:12px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Ratnagiri, Maharashtra</div>
+              </div>
+            </div>
+          </div>
+          <div style="padding:1.25rem 1.5rem 1.5rem;">
+            <p style="font-size:var(--text-sm);color:var(--text-secondary);margin-bottom:1rem;line-height:1.5;">Authentic Alphonso mangoes, pineapples, and coconuts grown along the sunny coast.</p>
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+              <span class="badge badge-gold">Alphonso</span><span class="badge badge-terra">Tropical</span><span class="badge badge-green">Coastal Farm</span>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
