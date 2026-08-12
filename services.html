@@ -14,10 +14,11 @@
   <link rel="stylesheet" href="assets/css/dark-mode.css">
   <script src="assets/js/icons.js"></script>
   <style>
-    .pricing-card { background: var(--bg-card); border: 2px solid var(--border-light); border-radius: var(--radius-2xl); padding: 2.5rem 2rem; position: relative; transition: all var(--dur-normal); box-shadow: var(--shadow-card); }
+    .pricing-card { display: flex; flex-direction: column; background: var(--bg-card); border: 2px solid var(--border-light); border-radius: var(--radius-2xl); padding: 2.5rem 2rem; position: relative; transition: all var(--dur-normal); box-shadow: var(--shadow-card); }
     .pricing-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); }
     .pricing-card.featured { border-color: var(--color-leaf); background: linear-gradient(180deg, var(--color-forest-50) 0%, var(--bg-card) 100%); }
     .pricing-popular-tag { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--color-leaf); color: white; padding: 0.25rem 1rem; border-radius: var(--radius-full); font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: var(--ls-wider); }
+    .pricing-card .btn { margin-top: auto; }
   </style>
 </head>
 <body>
@@ -117,7 +118,7 @@
           <div class="product-card-body">
             <div class="product-category">Leafy Greens</div>
             <h3 class="product-name">Baby Spinach Bundle</h3>
-            <p class="product-description" style="font-size:var(--text-xs);color:var(--text-secondary);margin:0.5rem 0;line-height:1.4;height:2.8rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;">Tender, vitamin-rich organic baby spinach leaves. Pre-washed and perfect for healthy salads.</p>
+            <p class="product-description" style="font-size:var(--text-xs);color:var(--text-secondary);margin:0.5rem 0;line-height:1.4;min-height:3.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;">Tender, vitamin-rich organic baby spinach leaves. Pre-washed and perfect for healthy salads.</p>
             <div class="product-origin"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Ooty Farms, Tamil Nadu</div>
             <div class="stars" aria-label="4.8 stars">★★★★☆</div>
             <div class="product-footer">
@@ -135,7 +136,7 @@
           <div class="product-card-body">
             <div class="product-category">Citrus</div>
             <h3 class="product-name">Nagpur Oranges</h3>
-            <p class="product-description" style="font-size:var(--text-xs);color:var(--text-secondary);margin:0.5rem 0;line-height:1.4;height:2.8rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;">Juicy, sweet, and authentic GI-tagged Nagpur oranges. Hand-picked at peak sweetness.</p>
+            <p class="product-description" style="font-size:var(--text-xs);color:var(--text-secondary);margin:0.5rem 0;line-height:1.4;min-height:3.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;">Juicy, sweet, and authentic GI-tagged Nagpur oranges. Hand-picked at peak sweetness.</p>
             <div class="product-origin"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Nagpur, Maharashtra</div>
             <div class="stars" aria-label="5 stars">★★★★★</div>
             <div class="product-footer">
@@ -153,7 +154,7 @@
           <div class="product-card-body">
             <div class="product-category">Tomatoes</div>
             <h3 class="product-name">Cherry Tomatoes</h3>
-            <p class="product-description" style="font-size:var(--text-xs);color:var(--text-secondary);margin:0.5rem 0;line-height:1.4;height:2.8rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;">Bursting with sweet juice, these vine-ripened cherry tomatoes are locally sourced.</p>
+            <p class="product-description" style="font-size:var(--text-xs);color:var(--text-secondary);margin:0.5rem 0;line-height:1.4;min-height:3.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;">Bursting with sweet juice, these vine-ripened cherry tomatoes are locally sourced.</p>
             <div class="product-origin"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Pune, Maharashtra</div>
             <div class="stars" aria-label="4.9 stars">★★★★★</div>
             <div class="product-footer">
@@ -171,7 +172,7 @@
           <div class="product-card-body">
             <div class="product-category">Herbs</div>
             <h3 class="product-name">Fresh Basil Bunch</h3>
-            <p class="product-description" style="font-size:var(--text-xs);color:var(--text-secondary);margin:0.5rem 0;line-height:1.4;height:2.8rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;">Aromatic, pesticide-free fresh sweet basil leaves. Ideal for pesto sauce and pizzas.</p>
+            <p class="product-description" style="font-size:var(--text-xs);color:var(--text-secondary);margin:0.5rem 0;line-height:1.4;min-height:3.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;">Aromatic, pesticide-free fresh sweet basil leaves. Ideal for pesto sauce and pizzas.</p>
             <div class="product-origin"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Bangalore, Karnataka</div>
             <div class="stars" aria-label="5 stars">★★★★★</div>
             <div class="product-footer">
@@ -189,7 +190,7 @@
           <div class="product-card-body">
             <div class="product-category">Tropical</div>
             <h3 class="product-name">Sweet Pineapple</h3>
-            <p class="product-description" style="font-size:var(--text-xs);color:var(--text-secondary);margin:0.5rem 0;line-height:1.4;height:2.8rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;">Incredibly sweet and juicy tropical pineapples, hand-selected for quality.</p>
+            <p class="product-description" style="font-size:var(--text-xs);color:var(--text-secondary);margin:0.5rem 0;line-height:1.4;min-height:3.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;">Incredibly sweet and juicy tropical pineapples, hand-selected for quality.</p>
             <div class="product-origin"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Tripura, Northeast</div>
             <div class="stars" aria-label="4.7 stars">★★★★☆</div>
             <div class="product-footer">
@@ -207,7 +208,7 @@
           <div class="product-card-body">
             <div class="product-category">Root Vegetables</div>
             <h3 class="product-name">Purple Carrots</h3>
-            <p class="product-description" style="font-size:var(--text-xs);color:var(--text-secondary);margin:0.5rem 0;line-height:1.4;height:2.8rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;">Antioxidant-rich heirloom purple carrots. Crispy, sweet, and full of natural nutrients.</p>
+            <p class="product-description" style="font-size:var(--text-xs);color:var(--text-secondary);margin:0.5rem 0;line-height:1.4;min-height:3.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;">Antioxidant-rich heirloom purple carrots. Crispy, sweet, and full of natural nutrients.</p>
             <div class="product-origin"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Himachal Pradesh</div>
             <div class="stars" aria-label="4.8 stars">★★★★★</div>
             <div class="product-footer">
@@ -225,7 +226,7 @@
           <div class="product-card-body">
             <div class="product-category">Exotic Veg</div>
             <h3 class="product-name">Hass Avocados</h3>
-            <p class="product-description" style="font-size:var(--text-xs);color:var(--text-secondary);margin:0.5rem 0;line-height:1.4;height:2.8rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;">Creamy organic avocados grown in Kodaikanal. Rich in healthy fats and perfect for toast.</p>
+            <p class="product-description" style="font-size:var(--text-xs);color:var(--text-secondary);margin:0.5rem 0;line-height:1.4;min-height:3.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;">Creamy organic avocados grown in Kodaikanal. Rich in healthy fats and perfect for toast.</p>
             <div class="product-origin"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Kodaikanal, Tamil Nadu</div>
             <div class="stars" aria-label="5 stars">★★★★★</div>
             <div class="product-footer">
@@ -243,7 +244,7 @@
           <div class="product-card-body">
             <div class="product-category">Tropical Fruits</div>
             <h3 class="product-name">Alphonso Mango</h3>
-            <p class="product-description" style="font-size:var(--text-xs);color:var(--text-secondary);margin:0.5rem 0;line-height:1.4;height:2.8rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;">Premium Ratnagiri Alphonso mangoes. Highly sweet and rich fiberless fruit pulp.</p>
+            <p class="product-description" style="font-size:var(--text-xs);color:var(--text-secondary);margin:0.5rem 0;line-height:1.4;min-height:3.2rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;">Premium Ratnagiri Alphonso mangoes. Highly sweet and rich fiberless fruit pulp.</p>
             <div class="product-origin"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Ratnagiri, Maharashtra</div>
             <div class="stars" aria-label="5 stars">★★★★★</div>
             <div class="product-footer">
@@ -280,7 +281,7 @@
               </div>
               <p class="feature-text" style="font-size:var(--text-sm);color:var(--text-secondary);line-height:1.5;margin-bottom:1.5rem;">Order before 10 AM, receive by evening. Refrigerated vehicles guarantee your produce arrives fresh.</p>
             </div>
-            <a href="#delivery-options" class="btn btn-outline btn-sm w-full text-center">View Delivery Options</a>
+            <a href="#delivery-options" class="btn btn-primary btn-sm w-full text-center">View Delivery Options</a>
           </div>
         </div>
 
@@ -314,7 +315,7 @@
               </div>
               <p class="feature-text" style="font-size:var(--text-sm);color:var(--text-secondary);line-height:1.5;margin-bottom:1.5rem;">Dedicated account management, custom produce lists, and up to 40% wholesale discount for businesses.</p>
             </div>
-            <a href="#bulk-supply" class="btn btn-outline btn-sm w-full text-center">Get Wholesale Quote</a>
+            <a href="#bulk-supply" class="btn btn-primary btn-sm w-full text-center">Get Wholesale Quote</a>
           </div>
         </div>
 
@@ -331,7 +332,7 @@
               </div>
               <p class="feature-text" style="font-size:var(--text-sm);color:var(--text-secondary);line-height:1.5;margin-bottom:1.5rem;">Boost workplace health with fresh seasonal fruit baskets delivered weekly to your office.</p>
             </div>
-            <a href="contact.html?service=corporate" class="btn btn-outline btn-sm w-full text-center">Inquire Corporate Box</a>
+            <a href="contact.html?service=corporate" class="btn btn-primary btn-sm w-full text-center">Inquire Corporate Box</a>
           </div>
         </div>
 
@@ -348,7 +349,7 @@
               </div>
               <p class="feature-text" style="font-size:var(--text-sm);color:var(--text-secondary);line-height:1.5;margin-bottom:1.5rem;">Visit our partner farms in Ooty and Pune. Walk the fields, pick produce, and meet the farmers.</p>
             </div>
-            <a href="contact.html?service=tours" class="btn btn-outline btn-sm w-full text-center">Book Farm Tour</a>
+            <a href="contact.html?service=tours" class="btn btn-primary btn-sm w-full text-center">Book Farm Tour</a>
           </div>
         </div>
 
@@ -365,7 +366,7 @@
               </div>
               <p class="feature-text" style="font-size:var(--text-sm);color:var(--text-secondary);line-height:1.5;margin-bottom:1.5rem;">Pesticide lab reports available on request. Transparent batch tracking from harvest to delivery.</p>
             </div>
-            <a href="about.html" class="btn btn-outline btn-sm w-full text-center">Learn About Testing</a>
+            <a href="about.html" class="btn btn-primary btn-sm w-full text-center">Learn About Testing</a>
           </div>
         </div>
 
@@ -381,8 +382,8 @@
         <h2 class="section-title" id="del-heading">Choose Your <span class="highlight">Delivery Slot</span></h2>
       </div>
 
-      <div class="tabs-wrapper" data-reveal="fade-up" data-delay="100">
-        <div class="tabs" role="tablist" style="justify-content:center;margin-bottom:2rem;">
+      <div class="tabs-wrapper" style="display:flex; flex-direction:column; align-items:center;" data-reveal="fade-up" data-delay="100">
+        <div class="tabs" role="tablist" style="margin-bottom:2rem;">
           <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-std">Standard Delivery</button>
           <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-exp">Express (2-4 hrs)</button>
           <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-sub">Subscription</button>
@@ -526,7 +527,7 @@
   <!-- ══ SECTION 5: BULK & WHOLESALE ══ -->
   <section class="section" id="bulk-supply" style="padding: 3rem 0; background: var(--bg-primary);">
     <div class="container">
-      <div style="background: linear-gradient(135deg, var(--color-forest) 0%, #0F3B20 100%); color: white; border-radius: var(--radius-3xl); padding: 3.5rem 3rem; box-shadow: var(--shadow-xl); overflow: hidden; position: relative;">
+      <div style="background: linear-gradient(135deg, #14532D 0%, #0F3B20 100%); color: white; border-radius: var(--radius-3xl); padding: 3.5rem 3rem; box-shadow: var(--shadow-xl); overflow: hidden; position: relative;">
         <!-- Background decorative elements -->
         <div style="position: absolute; top: -10%; right: -10%; width: 300px; height: 300px; background: rgba(255,255,255,0.03); border-radius: 50%; pointer-events: none;"></div>
         <div style="position: absolute; bottom: -10%; left: -5%; width: 200px; height: 200px; background: rgba(255,255,255,0.02); border-radius: 50%; pointer-events: none;"></div>
