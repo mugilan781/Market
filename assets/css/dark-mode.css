@@ -288,6 +288,18 @@
 }
 
 /* ================================================================
+   FLOATING BADGES (HERO) DARK MODE
+   ================================================================ */
+[data-theme="dark"] .floating-badge {
+  background: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .floating-badge span[style*="color:var(--color-forest)"] {
+  color: #4ADE80 !important;
+}
+
+/* ================================================================
    BLOG DARK MODE
    ================================================================ */
 [data-theme="dark"] .blog-card-img { background: var(--bg-tertiary); }
