@@ -2088,7 +2088,7 @@ select.form-control {
    PAGE HERO (Internal pages)
    ================================================================ */
 .page-hero {
-  background: var(--grad-primary);
+  background: linear-gradient(135deg, #14532D 0%, #3F6212 100%);
   padding: calc(var(--navbar-h) + 3rem) 0 3rem;
   position: relative;
   overflow: hidden;
