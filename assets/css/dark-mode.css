@@ -16,6 +16,8 @@
   --text-inverse:  #0A190F;
   --border-color:  #285934;
   --border-light:  #1F4628;
+  --color-forest:  #4ADE80;
+  --color-forest-50: #112F1B;
 }
 
 /* ================================================================
@@ -90,6 +92,16 @@
   background: #A3E635;
   border-color: #A3E635;
   color: #0D1F14;
+}
+
+[data-theme="dark"] .btn-primary {
+  color: #0A190F !important;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .pricing-card.featured {
+  border-color: var(--color-leaf);
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
 }
 
 [data-theme="dark"] .nav-dropdown {
@@ -228,12 +240,17 @@
 }
 
 [data-theme="dark"] .faq-item.open .faq-icon {
-  background: var(--color-forest-600);
+  background: var(--color-leaf);
   color: white;
 }
 
-[data-theme="dark"] .faq-answer-inner {
-  border-top-color: var(--border-color);
+[data-theme="dark"] .faq-item.open .faq-question {
+  color: #A3E635 !important;
+}
+
+[data-theme="dark"] .faq-question:hover {
+  background: var(--bg-secondary) !important;
+  color: #A3E635 !important;
 }
 
 /* ================================================================

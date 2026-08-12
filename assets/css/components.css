@@ -1310,8 +1310,6 @@ select.form-control {
   font-size: var(--text-sm);
   color: var(--text-secondary);
   line-height: var(--lh-relaxed);
-  border-top: 1px solid var(--border-light);
-  padding-top: 1rem;
 }
 
 /* ================================================================
