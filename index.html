@@ -405,10 +405,10 @@
       </div>
 
       <div class="testimonials-carousel" aria-label="Customer testimonials">
-        <div style="overflow:hidden;position:relative;">
-          <div class="testi-track" style="display:flex;gap:1.5rem;transition:transform 0.5s cubic-bezier(0.4,0,0.2,1);">
+        <div style="overflow:hidden;position:relative;padding:0.5rem 0;">
+          <div class="testi-track">
 
-            <div class="testimonial-card" style="min-width:calc(33.333% - 1rem);flex-shrink:0;" data-reveal="fade-up" data-delay="100">
+            <div class="testimonial-card" data-reveal="fade-up" data-delay="100">
               <div class="stars" aria-label="5 stars">★★★★★</div>
               <p class="testimonial-text">"The vegetables are unbelievably fresh! I can literally smell the farm. Been a customer for 8 months and my family is healthier than ever. Never going back to supermarkets!"</p>
               <div class="testimonial-author">
@@ -420,7 +420,7 @@
               </div>
             </div>
 
-            <div class="testimonial-card" style="min-width:calc(33.333% - 1rem);flex-shrink:0;" data-reveal="fade-up" data-delay="200">
+            <div class="testimonial-card" data-reveal="fade-up" data-delay="200">
               <div class="stars" aria-label="5 stars">★★★★★</div>
               <p class="testimonial-text">"As a restaurant owner, quality is everything. FreshMarket's consistency is remarkable — every delivery is perfect. Their bulk order team is incredibly professional."</p>
               <div class="testimonial-author">
@@ -432,7 +432,7 @@
               </div>
             </div>
 
-            <div class="testimonial-card" style="min-width:calc(33.333% - 1rem);flex-shrink:0;" data-reveal="fade-up" data-delay="300">
+            <div class="testimonial-card" data-reveal="fade-up" data-delay="300">
               <div class="stars" aria-label="5 stars">★★★★★</div>
               <p class="testimonial-text">"The subscription box is a game-changer! Every Monday I get a beautiful surprise box of seasonal produce. It's forced me to try new vegetables I'd never have picked otherwise."</p>
               <div class="testimonial-author">
@@ -444,15 +444,48 @@
               </div>
             </div>
 
+            <div class="testimonial-card" data-reveal="fade-up" data-delay="100">
+              <div class="stars" aria-label="5 stars">★★★★★</div>
+              <p class="testimonial-text">"The organic fruits are top tier! As an athlete, clean nutrition is non-negotiable. The Nagpur oranges and Alphonso mangoes are exceptionally fresh and bursting with natural flavor."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar" style="background:#F0FDF4;display:flex;align-items:center;justify-content:center;color:#16A34A;width:48px;height:48px;border-radius:50%;"><svg class="icon-svg icon-svg-md" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                <div class="testimonial-info">
+                  <div class="testimonial-name">Vikram Patel</div>
+                  <div class="testimonial-role">Fitness Coach, Delhi</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card" data-reveal="fade-up" data-delay="200">
+              <div class="stars" aria-label="5 stars">★★★★★</div>
+              <p class="testimonial-text">"Same-day delivery in eco-friendly packaging! I love how FreshMarket connects us directly with local farmers. Ordering through their site is smooth and hassle-free every time."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar" style="background:#EFF6FF;display:flex;align-items:center;justify-content:center;color:#2563EB;width:48px;height:48px;border-radius:50%;"><svg class="icon-svg icon-svg-md" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                <div class="testimonial-info">
+                  <div class="testimonial-name">Ananya Roy</div>
+                  <div class="testimonial-role">Software Engineer, Hyderabad</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card" data-reveal="fade-up" data-delay="300">
+              <div class="stars" aria-label="5 stars">★★★★★</div>
+              <p class="testimonial-text">"Finding authentic, chemical-free produce used to be a challenge. FreshMarket's hydroponic spinach and crisp purple carrots exceeded all my expectations. Absolutely top quality!"</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar" style="background:#FAF5FF;display:flex;align-items:center;justify-content:center;color:#9333EA;width:48px;height:48px;border-radius:50%;"><svg class="icon-svg icon-svg-md" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                <div class="testimonial-info">
+                  <div class="testimonial-name">David Miller</div>
+                  <div class="testimonial-role">Food Blogger & Expat, Goa</div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
         <div style="display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:2rem;">
           <button class="slider-arrow testi-prev" aria-label="Previous testimonials">&#8592;</button>
-          <div style="display:flex;gap:0.5rem;">
-            <button class="slider-dot testi-dot active" aria-label="Testimonials group 1"></button>
-            <button class="slider-dot testi-dot" aria-label="Testimonials group 2"></button>
-          </div>
+          <div class="testi-dots" style="display:flex;gap:0.5rem;"></div>
           <button class="slider-arrow testi-next" aria-label="Next testimonials">&#8594;</button>
         </div>
       </div>

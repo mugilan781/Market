@@ -969,7 +969,34 @@ header {
 
 .blog-read-more:hover { gap: 0.625rem; color: var(--color-leaf); }
 
-/* Testimonial Card */
+/* Testimonial Track & Card Sizing */
+.testi-track {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.testi-track .testimonial-card {
+  flex: 0 0 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .testi-track .testimonial-card {
+    flex: 0 0 calc((100% - 1.5rem) / 2);
+    max-width: calc((100% - 1.5rem) / 2);
+  }
+}
+
+@media (min-width: 1024px) {
+  .testi-track .testimonial-card {
+    flex: 0 0 calc((100% - 3rem) / 3);
+    max-width: calc((100% - 3rem) / 3);
+  }
+}
+
 .testimonial-card {
   background: var(--bg-card);
   border: 1px solid var(--border-light);

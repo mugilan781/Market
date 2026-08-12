@@ -174,14 +174,9 @@ class TestimonialsCarousel {
     this.cards    = [...this.wrapper.querySelectorAll('.testimonial-card')];
     this.prevBtn  = this.wrapper.querySelector('.testi-prev');
     this.nextBtn  = this.wrapper.querySelector('.testi-next');
-    this.dots     = [...this.wrapper.querySelectorAll('.testi-dot')];
+    this.dots     = [];
 
     this.current  = 0;
-    this.visible  = this.getVisibleCount();
-    this.max      = Math.max(0, this.cards.length - this.visible);
-
-    if (this.cards.length <= this.visible) return;
-
     this.init();
   }
 
@@ -193,35 +188,73 @@ class TestimonialsCarousel {
   }
 
   init() {
+    this.visible = this.getVisibleCount();
+    this.max     = Math.max(0, this.cards.length - this.visible);
+    this.renderDots();
     this.updateSlide();
     this.bindEvents();
     this.startAutoplay();
   }
 
+  renderDots() {
+    const dotsContainer = this.wrapper.querySelector('.testi-dots');
+    if (!dotsContainer) return;
+    dotsContainer.innerHTML = '';
+    const totalDots = this.max + 1;
+    this.dots = [];
+    for (let i = 0; i < totalDots; i++) {
+      const dot = document.createElement('button');
+      dot.className = `slider-dot testi-dot ${i === this.current ? 'active' : ''}`;
+      dot.setAttribute('aria-label', `Go to testimonial slide ${i + 1}`);
+      dot.addEventListener('click', () => {
+        this.current = i;
+        this.updateSlide();
+        this.resetAutoplay();
+      });
+      dotsContainer.appendChild(dot);
+      this.dots.push(dot);
+    }
+  }
+
   updateSlide() {
-    if (!this.track) return;
-    const cardWidth   = this.cards[0]?.offsetWidth || 0;
-    const gap         = 24;
-    const offset      = this.current * (cardWidth + gap);
+    if (!this.track || !this.cards.length) return;
+    this.visible = this.getVisibleCount();
+    this.max     = Math.max(0, this.cards.length - this.visible);
+    if (this.current > this.max) this.current = this.max;
+
+    const cardWidth = this.cards[0].getBoundingClientRect().width;
+    const gap = 24;
+    const offset = this.current * (cardWidth + gap);
     this.track.style.transform = `translateX(-${offset}px)`;
 
     this.cards.forEach((card, i) => {
-      card.style.opacity = (i >= this.current && i < this.current + this.visible) ? '1' : '0.5';
+      card.style.opacity = (i >= this.current && i < this.current + this.visible) ? '1' : '0.4';
     });
 
     this.dots.forEach((dot, i) => dot.classList.toggle('active', i === this.current));
-
-    if (this.prevBtn) this.prevBtn.disabled = this.current === 0;
-    if (this.nextBtn) this.nextBtn.disabled = this.current >= this.max;
   }
 
-  next() { if (this.current < this.max) { this.current++; this.updateSlide(); } }
-  prev() { if (this.current > 0) { this.current--; this.updateSlide(); } }
+  next() {
+    if (this.current < this.max) {
+      this.current++;
+    } else {
+      this.current = 0;
+    }
+    this.updateSlide();
+  }
+
+  prev() {
+    if (this.current > 0) {
+      this.current--;
+    } else {
+      this.current = this.max;
+    }
+    this.updateSlide();
+  }
 
   bindEvents() {
     this.prevBtn?.addEventListener('click', () => { this.prev(); this.resetAutoplay(); });
     this.nextBtn?.addEventListener('click', () => { this.next(); this.resetAutoplay(); });
-    this.dots.forEach((dot, i) => dot.addEventListener('click', () => { this.current = Math.min(i, this.max); this.updateSlide(); this.resetAutoplay(); }));
 
     let touchStart = 0;
     this.wrapper.addEventListener('touchstart', e => { touchStart = e.touches[0].clientX; }, { passive: true });
@@ -231,21 +264,26 @@ class TestimonialsCarousel {
     }, { passive: true });
 
     window.addEventListener('resize', () => {
+      const oldMax = this.max;
       this.visible = this.getVisibleCount();
       this.max     = Math.max(0, this.cards.length - this.visible);
-      this.current = Math.min(this.current, this.max);
+      if (this.current > this.max) this.current = this.max;
+      if (oldMax !== this.max) {
+        this.renderDots();
+      }
       this.updateSlide();
     });
   }
 
   startAutoplay() {
+    this.stopAutoplay();
+    if (this.max <= 0) return;
     this.timer = setInterval(() => {
-      this.current >= this.max ? this.current = 0 : this.current++;
-      this.updateSlide();
+      this.next();
     }, 4000);
   }
 
-  stopAutoplay()  { clearInterval(this.timer); }
+  stopAutoplay()  { if (this.timer) clearInterval(this.timer); }
   resetAutoplay() { this.stopAutoplay(); this.startAutoplay(); }
 }
 
