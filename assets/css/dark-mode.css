@@ -130,10 +130,36 @@
    ================================================================ */
 [data-theme="dark"] .category-card {
   background: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
 }
 
 [data-theme="dark"] .category-card .cat-name { color: var(--text-primary) !important; }
 [data-theme="dark"] .category-card p { color: var(--text-secondary) !important; }
+
+[data-theme="dark"] .cat-card-veg .cat-icon,
+[data-theme="dark"] .cat-card-veg svg { color: #4ADE80 !important; }
+
+[data-theme="dark"] .cat-card-fruits .cat-icon,
+[data-theme="dark"] .cat-card-fruits svg { color: #FB923C !important; }
+
+[data-theme="dark"] .cat-card-herbs .cat-icon,
+[data-theme="dark"] .cat-card-herbs svg { color: #A3E635 !important; }
+
+[data-theme="dark"] .cat-card-seasonal .cat-icon,
+[data-theme="dark"] .cat-card-seasonal svg { color: #FACC15 !important; }
+
+[data-theme="dark"] .cat-card-bulk .cat-icon,
+[data-theme="dark"] .cat-card-bulk svg { color: #2DD4BF !important; }
+
+[data-theme="dark"] .category-card:hover {
+  background: var(--color-forest) !important;
+  border-color: var(--color-gold) !important;
+}
+
+[data-theme="dark"] .category-card:hover .cat-name { color: #FFFFFF !important; }
+[data-theme="dark"] .category-card:hover p { color: rgba(255, 255, 255, 0.85) !important; }
+[data-theme="dark"] .category-card:hover .cat-icon,
+[data-theme="dark"] .category-card:hover svg { color: var(--color-gold) !important; }
 
 /* ================================================================
    FEATURE CARDS DARK MODE (home: "Freshness You Can Taste")

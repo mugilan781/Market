@@ -1010,17 +1010,22 @@ header {
 .testimonial-card::before {
   content: '"';
   position: absolute;
-  top: 1.5rem;
-  right: 1.75rem;
+  top: 1.25rem;
+  right: 1.5rem;
   font-family: var(--font-serif);
-  font-size: 4rem;
-  color: var(--color-forest-100);
+  font-size: 3.5rem;
+  color: var(--color-gold);
+  opacity: 0.75;
   line-height: 1;
   font-weight: var(--fw-bold);
+  pointer-events: none;
 }
 
-[dir="rtl"] .testimonial-card::before { right: auto; left: 1.75rem; }
-[data-theme="dark"] .testimonial-card::before { color: rgba(20,83,45,0.2); }
+[dir="rtl"] .testimonial-card::before { right: auto; left: 1.5rem; }
+[data-theme="dark"] .testimonial-card::before {
+  color: var(--color-gold) !important;
+  opacity: 0.85 !important;
+}
 
 .testimonial-card:hover {
   transform: translateY(-4px);

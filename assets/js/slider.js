@@ -22,7 +22,7 @@ class HeroSlider {
     this.current      = 0;
     this.total        = this.slides.length;
     this.interval     = null;
-    this.delay        = 5500;
+    this.delay        = 10000;
     this.isAnimating  = false;
     this.touchStartX  = 0;
     this.touchEndX    = 0;
