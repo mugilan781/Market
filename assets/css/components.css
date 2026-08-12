@@ -2708,7 +2708,7 @@ select.form-control { cursor: pointer; }
   overflow: hidden;
   margin-bottom: 0.75rem;
   background: var(--bg-card);
-  transition: border-color var(--dur-fast);
+  transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
 }
 
 .faq-item.open {
@@ -2727,10 +2727,13 @@ select.form-control { cursor: pointer; }
   gap: 1rem;
   font-size: var(--text-base);
   user-select: none;
-  transition: background var(--dur-fast);
+  transition: color var(--dur-fast);
 }
 
-.faq-question:hover { background: var(--bg-secondary); }
+.faq-item:hover {
+  border-color: var(--color-leaf);
+  box-shadow: var(--shadow-sm);
+}
 
 .faq-icon {
   font-size: 1.25rem;

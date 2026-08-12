@@ -248,11 +248,6 @@
   color: #A3E635 !important;
 }
 
-[data-theme="dark"] .faq-question:hover {
-  background: var(--bg-secondary) !important;
-  color: #A3E635 !important;
-}
-
 /* ================================================================
    TABS DARK MODE
    ================================================================ */
