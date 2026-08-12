@@ -126,6 +126,25 @@
 [data-theme="dark"] .freshness-item { color: rgba(255,255,255,0.85); }
 
 /* ================================================================
+   CATEGORY CARDS DARK MODE (home: "Fresh From The Farm")
+   ================================================================ */
+[data-theme="dark"] .category-card {
+  background: var(--bg-card) !important;
+}
+
+[data-theme="dark"] .category-card .cat-name { color: var(--text-primary) !important; }
+[data-theme="dark"] .category-card p { color: var(--text-secondary) !important; }
+
+/* ================================================================
+   FEATURE CARDS DARK MODE (home: "Freshness You Can Taste")
+   Shadow kept at light-mode level so it doesn't look too heavy
+   ================================================================ */
+[data-theme="dark"] .feature-card,
+[data-theme="dark"] .feature-card:hover {
+  box-shadow: 0 2px 16px rgba(63,41,34,0.1), 0 1px 4px rgba(63,41,34,0.06);
+}
+
+/* ================================================================
    FORMS DARK MODE
    ================================================================ */
 [data-theme="dark"] .form-control {
@@ -142,6 +161,15 @@
 [data-theme="dark"] .newsletter-form {
   background: rgba(255,255,255,0.08);
   border-color: rgba(255,255,255,0.15);
+}
+
+/* ================================================================
+   CTA / NEWSLETTER SECTION DARK MODE (home: "Get Fresh Daily Deals")
+   Section stays identical to light mode in dark mode
+   ================================================================ */
+[data-theme="dark"] .cta-section .newsletter-form {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.3);
 }
 
 /* ================================================================
