@@ -431,3 +431,48 @@
 .anim-float-gentle {
   transition-property: opacity, transform, background-color, border-color, color;
 }
+
+/* ================================================================
+   CART DRAWER DARK MODE
+   ================================================================ */
+[data-theme="dark"] .cart-drawer {
+  background: #0B160E !important;
+  border-left: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .cart-drawer-header,
+[data-theme="dark"] .cart-drawer-footer {
+  background: #0B160E !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .cart-item {
+  background: #102416 !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .cart-item-price,
+[data-theme="dark"] .subtotal-amount {
+  color: #4ADE80 !important;
+}
+
+[data-theme="dark"] .cart-qty-btn {
+  background: #0B160E !important;
+  border-color: var(--border-color) !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .cart-qty-btn:hover {
+  background: var(--color-forest) !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .cart-delivery-note {
+  background: rgba(20, 83, 45, 0.4) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-theme="dark"] .cart-empty-state .empty-icon {
+  background: rgba(20, 83, 45, 0.4);
+  color: #4ADE80;
+}

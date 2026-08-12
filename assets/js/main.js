@@ -299,25 +299,287 @@ const initWishlist = () => {
 /* ================================================================
    ADD TO CART
    ================================================================ */
-const initCart = () => {
-  let cartCount = 0;
-  const badge = document.querySelector('.cart-badge');
+class CartManager {
+  constructor() {
+    this.cartKey = 'freshmarket_cart';
+    this.cart = this.loadCart();
+    this.initUI();
+    this.bindEvents();
+    this.updateUI();
+  }
 
-  document.querySelectorAll('.btn-cart, .btn-add-cart').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.stopPropagation();
-      cartCount++;
-      if (badge) {
-        badge.textContent = cartCount;
-        badge.style.display = 'block';
-        badge.classList.add('anim-pulse-gold');
-        setTimeout(() => badge.classList.remove('anim-pulse-gold'), 1000);
+  loadCart() {
+    try {
+      const stored = localStorage.getItem(this.cartKey);
+      return stored ? JSON.parse(stored) : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  saveCart() {
+    try {
+      localStorage.setItem(this.cartKey, JSON.stringify(this.cart));
+    } catch (e) {}
+  }
+
+  initUI() {
+    // 1. Ensure Cart Button in Nav Controls if missing
+    document.querySelectorAll('.nav-controls').forEach(controls => {
+      if (!controls.querySelector('.cart-btn')) {
+        const rtlBtn = controls.querySelector('.rtl-btn');
+        const ctaBtn = controls.querySelector('.nav-cta');
+        const cartBtn = document.createElement('button');
+        cartBtn.className = 'nav-icon-btn cart-btn';
+        cartBtn.id = 'cart-btn';
+        cartBtn.setAttribute('aria-label', 'View shopping cart');
+        cartBtn.setAttribute('style', 'position:relative;');
+        cartBtn.innerHTML = `
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-badge">0</span>
+        `;
+        if (rtlBtn && ctaBtn) {
+          controls.insertBefore(cartBtn, ctaBtn);
+        } else {
+          controls.appendChild(cartBtn);
+        }
       }
-      const name = btn.closest('.product-card')?.querySelector('.product-name')?.textContent || 'Item';
-      showToast('Added to Cart', name, 'cart');
     });
-  });
-};
+
+    // 2. Inject Cart Overlay & Drawer in DOM if missing
+    if (!document.getElementById('cart-drawer')) {
+      const drawerHTML = `
+        <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+        <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-label="Shopping Cart">
+          <div class="cart-drawer-header">
+            <div class="cart-drawer-title">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Your Basket (<span id="cart-drawer-count">0</span>)
+            </div>
+            <button class="cart-drawer-close" id="cart-close-btn" aria-label="Close cart"><svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          </div>
+
+          <div class="cart-drawer-body" id="cart-items-container">
+            <!-- Items rendered dynamically -->
+          </div>
+
+          <div class="cart-drawer-footer" id="cart-drawer-footer">
+            <div class="cart-subtotal">
+              <span>Subtotal:</span>
+              <span class="subtotal-amount" id="cart-subtotal-price">₹0</span>
+            </div>
+            <div class="cart-delivery-note" id="cart-delivery-note">
+              <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              <span id="delivery-promo-text">Free delivery on orders above ₹399</span>
+            </div>
+            <a href="contact.html" class="btn btn-gold w-full checkout-btn" id="checkout-btn" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;"><span>Proceed to Checkout</span> <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            <button class="cart-clear-btn" id="cart-clear-btn" style="display:flex;align-items:center;justify-content:center;gap:0.35rem;"><svg class="icon-svg icon-svg-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg> <span>Clear Cart</span></button>
+          </div>
+        </aside>
+      `;
+      document.body.insertAdjacentHTML('beforeend', drawerHTML);
+    }
+  }
+
+  bindEvents() {
+    // Open Cart Drawer
+    document.addEventListener('click', e => {
+      const cartBtn = e.target.closest('.cart-btn');
+      if (cartBtn) {
+        this.openDrawer();
+      }
+    });
+
+    // Close Cart Drawer
+    document.addEventListener('click', e => {
+      if (e.target.closest('#cart-close-btn') || e.target.closest('#cart-overlay')) {
+        this.closeDrawer();
+      }
+    });
+
+    // ESC Key to close
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') this.closeDrawer();
+    });
+
+    // Add to Cart buttons on product cards
+    document.addEventListener('click', e => {
+      const addBtn = e.target.closest('.btn-cart, .btn-add-cart');
+      if (addBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const card = addBtn.closest('.product-card') || addBtn.closest('.special-card') || addBtn.closest('.deal-card');
+        const name = addBtn.getAttribute('data-name') || card?.querySelector('.product-name, h3')?.textContent?.trim() || 'Organic Produce';
+        const priceText = addBtn.getAttribute('data-price') || card?.querySelector('.price-current, .price')?.textContent?.trim() || '₹100';
+        const unit = card?.querySelector('.price-unit')?.textContent?.trim() || '';
+        const img = addBtn.getAttribute('data-img') || card?.querySelector('img')?.src || 'assets/images/product_alphonso_mango.png';
+
+        const price = parseInt(priceText.replace(/[^0-9]/g, '')) || 100;
+
+        this.addItem({
+          id: name.toLowerCase().replace(/[^a-z0-9]/g, '_'),
+          name,
+          price,
+          unit,
+          img
+        });
+
+        showToast('Added to Cart', name, 'cart');
+      }
+    });
+
+    // Quantity & Remove clicks inside Cart Drawer
+    document.addEventListener('click', e => {
+      const qtyBtn = e.target.closest('.cart-qty-btn');
+      if (qtyBtn) {
+        const id = qtyBtn.getAttribute('data-id');
+        const action = qtyBtn.getAttribute('data-action');
+        this.updateQty(id, action === 'increase' ? 1 : -1);
+      }
+
+      const removeBtn = e.target.closest('.cart-item-remove');
+      if (removeBtn) {
+        const id = removeBtn.getAttribute('data-id');
+        this.removeItem(id);
+      }
+
+      if (e.target.closest('#cart-clear-btn')) {
+        this.clearCart();
+      }
+    });
+  }
+
+  addItem(item) {
+    const existing = this.cart.find(i => i.id === item.id);
+    if (existing) {
+      existing.qty++;
+    } else {
+      this.cart.push({ ...item, qty: 1 });
+    }
+    this.saveCart();
+    this.updateUI();
+    this.animateBadge();
+  }
+
+  updateQty(id, delta) {
+    const item = this.cart.find(i => i.id === id);
+    if (!item) return;
+    item.qty += delta;
+    if (item.qty <= 0) {
+      this.removeItem(id);
+      return;
+    }
+    this.saveCart();
+    this.updateUI();
+  }
+
+  removeItem(id) {
+    this.cart = this.cart.filter(i => i.id !== id);
+    this.saveCart();
+    this.updateUI();
+  }
+
+  clearCart() {
+    this.cart = [];
+    this.saveCart();
+    this.updateUI();
+  }
+
+  openDrawer() {
+    document.getElementById('cart-drawer')?.classList.add('active');
+    document.getElementById('cart-overlay')?.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeDrawer() {
+    document.getElementById('cart-drawer')?.classList.remove('active');
+    document.getElementById('cart-overlay')?.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  animateBadge() {
+    document.querySelectorAll('.cart-badge').forEach(badge => {
+      badge.classList.remove('anim-bounce');
+      void badge.offsetWidth;
+      badge.classList.add('anim-bounce');
+    });
+  }
+
+  updateUI() {
+    const totalQty = this.cart.reduce((sum, item) => sum + item.qty, 0);
+    const totalPrice = this.cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+    // Badges
+    document.querySelectorAll('.cart-badge').forEach(badge => {
+      badge.textContent = totalQty;
+      badge.style.display = totalQty > 0 ? 'flex' : 'none';
+    });
+
+    const countEl = document.getElementById('cart-drawer-count');
+    if (countEl) countEl.textContent = totalQty;
+
+    const subtotalEl = document.getElementById('cart-subtotal-price');
+    if (subtotalEl) subtotalEl.textContent = `₹${totalPrice}`;
+
+    // Delivery Promo text
+    const promoEl = document.getElementById('delivery-promo-text');
+    if (promoEl) {
+      if (totalPrice >= 399) {
+        promoEl.innerHTML = `<span style="display:inline-flex;align-items:center;gap:0.35rem;"><svg class="icon-svg icon-svg-xs" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <strong>Free Delivery Unlocked!</strong></span>`;
+      } else if (totalPrice > 0) {
+        const remaining = 399 - totalPrice;
+        promoEl.innerHTML = `Add <strong>₹${remaining}</strong> more for Free Delivery!`;
+      } else {
+        promoEl.textContent = `Free delivery on orders above ₹399`;
+      }
+    }
+
+    // Render items
+    const container = document.getElementById('cart-items-container');
+    if (!container) return;
+
+    if (this.cart.length === 0) {
+      container.innerHTML = `
+        <div class="cart-empty-state">
+          <div class="empty-icon">
+            <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </div>
+          <h4>Your Cart is Empty</h4>
+          <p>Explore our fresh produce and add items to your basket!</p>
+          <a href="home2.html" class="btn btn-primary btn-sm" style="margin-top:1rem;">Start Shopping</a>
+        </div>
+      `;
+      const footer = document.getElementById('cart-drawer-footer');
+      if (footer) footer.style.display = 'none';
+    } else {
+      const footer = document.getElementById('cart-drawer-footer');
+      if (footer) footer.style.display = 'block';
+
+      container.innerHTML = this.cart.map(item => `
+        <div class="cart-item">
+          <img src="${item.img}" alt="${item.name}" class="cart-item-img">
+          <div class="cart-item-details">
+            <div class="cart-item-name">${item.name}</div>
+            <div class="cart-item-price">₹${item.price} <span class="cart-item-unit">${item.unit}</span></div>
+            <div class="cart-item-controls">
+              <button class="cart-qty-btn" data-id="${item.id}" data-action="decrease" aria-label="Decrease quantity">
+                <svg class="icon-svg icon-svg-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </button>
+              <span class="cart-item-qty">${item.qty}</span>
+              <button class="cart-qty-btn" data-id="${item.id}" data-action="increase" aria-label="Increase quantity">
+                <svg class="icon-svg icon-svg-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </button>
+            </div>
+          </div>
+          <button class="cart-item-remove" data-id="${item.id}" aria-label="Remove item">
+            <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+          </button>
+        </div>
+      `).join('');
+    }
+  }
+}
 
 /* ================================================================
    INIT ALL
@@ -332,6 +594,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initRipple();
   initSmoothScroll();
   initWishlist();
-  initCart();
+  new CartManager();
   initPageTransitions();
 });
