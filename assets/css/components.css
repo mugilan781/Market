@@ -316,6 +316,16 @@ header {
   background: rgba(101,163,13,0.15) !important;
 }
 
+/* Homepage Top Transparent Navbar Indicator override in Light Mode to match Dark Mode style */
+html[data-theme="light"] .home-page .navbar.transparent:not(.light-hero-nav) .nav-link.active {
+  color: #65A30D !important;
+  background: rgba(101, 163, 13, 0.15) !important;
+}
+html[data-theme="light"] .home-page .navbar.transparent:not(.light-hero-nav) .nav-link.active:hover {
+  color: #65A30D !important;
+  background: rgba(101, 163, 13, 0.15) !important;
+}
+
 /* Light Hero Transparent Navbar Override (e.g. for split hero in light mode) */
 .navbar.transparent.light-hero-nav {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 60%, rgba(255, 255, 255, 0) 100%);
