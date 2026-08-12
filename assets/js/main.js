@@ -58,12 +58,18 @@ const initNavbar = () => {
 
   const handleScroll = () => {
     const scrolled = window.scrollY > 50;
-    navbar.classList.toggle('scrolled', scrolled);
-    if (isHeroPage) navbar.classList.toggle('transparent', !scrolled);
+    if (isHeroPage) {
+      navbar.classList.toggle('scrolled', scrolled);
+      navbar.classList.toggle('transparent', !scrolled);
+    } else {
+      navbar.classList.add('scrolled');
+      navbar.classList.remove('transparent');
+    }
   };
 
   handleScroll();
   window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('resize', handleScroll, { passive: true });
 
   // Active link highlighting
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';

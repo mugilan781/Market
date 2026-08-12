@@ -390,7 +390,15 @@
    PAGE TRANSITION
    ================================================================ */
 .page-enter {
-  animation: fadeUp 0.6s var(--ease-smooth) both;
+  animation: pageEnter 0.6s var(--ease-smooth) both;
+}
+
+/* Opacity-only page enter: a transform on <body> would turn it into the
+   containing block for position:fixed descendants (the navbar), making
+   the navbar scroll away with the page. */
+@keyframes pageEnter {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 /* ================================================================
