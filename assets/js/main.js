@@ -372,7 +372,7 @@ class CartManager {
               <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
               <span id="delivery-promo-text">Free delivery on orders above ₹399</span>
             </div>
-            <a href="contact.html" class="btn btn-gold w-full checkout-btn" id="checkout-btn" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;"><span>Proceed to Checkout</span> <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            <a href="checkout.html" class="btn btn-gold w-full checkout-btn" id="checkout-btn" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;"><span>Proceed to Checkout</span> <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
             <button class="cart-clear-btn" id="cart-clear-btn" style="display:flex;align-items:center;justify-content:center;gap:0.35rem;"><svg class="icon-svg icon-svg-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg> <span>Clear Cart</span></button>
           </div>
         </aside>
