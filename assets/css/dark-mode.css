@@ -266,7 +266,7 @@
 [data-theme="dark"] .tag:hover,
 [data-theme="dark"] .tag.active {
   background: var(--color-forest);
-  color: white;
+  color: #000000;
   border-color: var(--color-forest);
 }
 
