@@ -64,7 +64,7 @@
   --grad-primary:  linear-gradient(135deg, var(--color-forest) 0%, var(--color-leaf) 100%);
   --grad-gold:     linear-gradient(135deg, #B45309 0%, #9A3412 100%);
   --grad-warm:     linear-gradient(135deg, #FEF9C3 0%, #FFFBEB 50%, #FFF7ED 100%);
-  --grad-hero:     linear-gradient(135deg, rgba(10,45,25,0.95) 0%, rgba(20,83,45,0.88) 100%);
+  --grad-hero:     linear-gradient(135deg, rgba(5,20,10,0.9) 0%, rgba(20,83,45,0.7) 100%);
   --grad-card:     linear-gradient(180deg, rgba(255,255,255,0) 60%, rgba(20,83,45,0.9) 100%);
   --grad-glass:    linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.1) 100%);
 

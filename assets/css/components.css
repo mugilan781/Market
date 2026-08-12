@@ -242,6 +242,12 @@ header {
 }
 
 .navbar.transparent .nav-icon-btn { color: rgba(255,255,255,0.9); }
+.navbar.transparent .nav-icon-btn:hover {
+  color: var(--color-forest) !important;
+}
+[data-theme="dark"] .navbar.transparent .nav-icon-btn:hover {
+  color: white !important;
+}
 
 .nav-icon-btn:hover {
   background: var(--border-light);
@@ -1360,7 +1366,7 @@ select.form-control {
    SECTION MARQUEE (TICKER)
    ================================================================ */
 .marquee-section {
-  background: var(--color-forest);
+  background: #0D3B1A;
   color: white;
   padding: 1rem 0;
   overflow: hidden;
