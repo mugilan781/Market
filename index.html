@@ -19,6 +19,79 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"LocalBusiness","name":"FreshMarket","description":"Premium Local Vegetable & Fruit Market","url":"https://freshmarket.local","telephone":"+1-800-FRESH-MK","address":{"@type":"PostalAddress","streetAddress":"123 Green Farm Road","addressLocality":"Harvest Valley","addressRegion":"CA","postalCode":"90210","addressCountry":"US"}}
   </script>
+  <style>
+    /* ================================================================
+       PAGE-SPECIFIC RESPONSIVE OVERRIDES (index.html)
+       Only overrides inline styles; desktop >1024px untouched.
+       ================================================================ */
+
+    /* Stats: 4-col inline grid → 2 cols (wide content: numbers up to 4rem) */
+    @media (max-width: 1024px) {
+      [style*="grid-template-columns:repeat(4,1fr)"] {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+      /* Hero blob decoration bleeds 80px off-screen right → contain it */
+      #categories {
+        overflow: hidden;
+      }
+    }
+
+    @media (max-width: 768px) {
+      /* Seasonal specials bento: 3-col inline grid → 2 cols */
+      .specials-bento {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+      /* Newsletter + app CTA: 2-col inline grid → stacked */
+      .cta-section .container > div {
+        grid-template-columns: 1fr !important;
+        gap: 2.5rem !important;
+      }
+      /* Category cards: compact inline padding */
+      .category-card {
+        padding: 1.75rem 1.25rem !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .category-card {
+        padding: 1.5rem 1rem !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Stats: tighter spacing + reduced section padding */
+      section[aria-label="FreshMarket at a glance"] {
+        padding: 2.5rem 0 !important;
+      }
+      [style*="grid-template-columns:repeat(4,1fr)"] {
+        gap: 1rem !important;
+      }
+      /* Stats: keep numbers from forcing cells wider than viewport */
+      .stat-number {
+        font-size: 1.75rem !important;
+      }
+      /* Specials bento → single column (reset feature tile's inline span) */
+      .specials-bento {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+      }
+      .specials-bento > div:first-child {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        min-height: 360px !important;
+      }
+      .specials-bento > div:first-child > div {
+        padding: 1.5rem !important;
+      }
+      /* CTA grid: tighter gap, compact app card padding */
+      .cta-section .container > div {
+        gap: 2rem !important;
+      }
+      .cta-section div[data-reveal="fade-left"] > div {
+        padding: 1.5rem !important;
+      }
+    }
+  </style>
 </head>
 <body class="home-page">
 

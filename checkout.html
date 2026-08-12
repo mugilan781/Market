@@ -89,6 +89,47 @@
     /* Dark mode styling overrides */
     [data-theme="dark"] .option-card:hover { background: rgba(74, 222, 128, 0.05); }
     [data-theme="dark"] .option-card.selected { background: rgba(74, 222, 128, 0.12); }
+
+    /* Checkout page responsive (appended) — laptop/tablet/phone/mobile */
+    @media (max-width: 1024px) {
+      .checkout-section { padding: 3rem 0; }
+      .checkout-grid { gap: 2rem; }
+    }
+
+    @media (max-width: 768px) {
+      #step-3 .option-grid[style*="grid-template-columns:1fr 1fr 1fr"] { grid-template-columns: repeat(2, 1fr) !important; }
+    }
+
+    @media (max-width: 640px) {
+      #step-1 > div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+      #step-1 [style*="grid-column: span 2"] { grid-column: span 1 !important; }
+
+      #card-details > div[style*="grid-template-columns:2fr 1fr 1fr"] { grid-template-columns: 1fr 1fr !important; }
+      #card-details [style*="grid-column: span 3"] { grid-column: span 2 !important; }
+
+      .success-container > .checkout-card > div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+      .success-container > .checkout-card > div[style*="grid-column: span 2"] { grid-column: span 1 !important; }
+    }
+
+    @media (max-width: 480px) {
+      .checkout-card { padding: 1.25rem; }
+      #checkout-empty-state { padding: 3rem 1.25rem !important; }
+      .success-container .checkout-card { padding: 2.5rem 1.25rem !important; }
+
+      .option-grid { grid-template-columns: 1fr; }
+      #step-3 .option-grid[style*="grid-template-columns:1fr 1fr 1fr"] { grid-template-columns: 1fr !important; }
+      .option-card { padding: 1rem; }
+
+      #card-details > div[style*="grid-template-columns:2fr 1fr 1fr"] { grid-template-columns: 1fr !important; }
+      #card-details [style*="grid-column: span 3"] { grid-column: span 1 !important; }
+
+      .cost-table { min-width: 0; }
+      .cost-row { font-size: var(--text-xs); }
+      .cost-row.total { font-size: var(--text-sm); }
+
+      .loader-card { padding: 2rem 1.25rem; }
+      .success-container { margin: 1.5rem auto; }
+    }
   </style>
 </head>
 <body>

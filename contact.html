@@ -31,6 +31,38 @@
     .btn-brand-yt:hover { background:#cc0000 !important; opacity:0.95; }
     .btn-brand-wa { background:#25D366 !important; color:#FFFFFF !important; border:none !important; }
     .btn-brand-wa:hover { background:#20ba5a !important; opacity:0.95; }
+
+    /* ================================================================
+       RESPONSIVE — CONTACT PAGE
+       (page-specific overrides for inline layouts; desktop unchanged)
+       ================================================================ */
+
+    /* 1024px: tablet-landscape — pincode checker fills its column */
+    @media (max-width: 1024px) {
+      .pincode-checker { max-width: 100%; }
+    }
+
+    /* 768px: tablet — contact info + form stack to one column */
+    @media (max-width: 768px) {
+      [style*="grid-template-columns:1fr 1.2fr"] { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+    }
+
+    /* 640px: phone — form 2-col rows stack; map height reduced */
+    @media (max-width: 640px) {
+      [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+      #map iframe { height: 340px; }
+    }
+
+    /* 480px: mobile — compact paddings, stacked pincode checker, shorter map */
+    @media (max-width: 480px) {
+      [style*="grid-template-columns:1fr 1.2fr"] { gap: 1.5rem !important; }
+      [style*="padding:2.5rem"] { padding: 1.5rem !important; }
+      [style*="padding:1.75rem"] { padding: 1.25rem !important; }
+      .pincode-checker { flex-direction: column; }
+      .pincode-checker input { flex: none; width: 100%; text-align: center; border-radius: var(--radius-xl) var(--radius-xl) 0 0; }
+      .pincode-checker button { width: 100%; border-radius: 0 0 var(--radius-xl) var(--radius-xl); }
+      #map iframe { height: 280px; }
+    }
   </style>
 </head>
 <body>

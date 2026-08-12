@@ -23,6 +23,37 @@
     @media (min-width: 1268px) { .catalog-grid { grid-template-columns: repeat(auto-fit, minmax(280px, calc(25% - 1.3125rem))); } }
     @media (min-width: 960px) and (max-width: 1267px) { .catalog-grid { grid-template-columns: repeat(auto-fit, minmax(280px, calc(33.333% - 1.166666rem))); } }
     @media (min-width: 652px) and (max-width: 959px) { .catalog-grid { grid-template-columns: repeat(auto-fit, minmax(280px, calc(50% - 0.875rem))); } }
+
+    /* ============ Services responsive additions (desktop unaffected) ============ */
+    /* Delivery option cards: text + image stack below 768px */
+    @media (max-width: 768px) {
+      .tab-panel > div {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        padding: 1.5rem !important;
+      }
+      /* Bulk/wholesale CTA: tighter padding, single column */
+      #bulk-supply .container > div { padding: 2.5rem 1.5rem; }
+      #bulk-supply .container > div > div {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+      }
+    }
+    /* Tablet/small screens: trim paddings and CTA heading */
+    @media (max-width: 640px) {
+      .tab-panel > div { padding: 1.25rem !important; }
+      #bulk-supply .container > div { padding: 2rem 1.25rem; }
+      #bulk-supply [data-reveal="fade-left"] { padding: 1.5rem !important; }
+      #bulk-supply h2 { font-size: 1.875rem !important; }
+    }
+    /* Phones: single-column stats, shorter slot images, tighter cards */
+    @media (max-width: 480px) {
+      #bulk-supply [style*="1fr 1fr"] { grid-template-columns: 1fr !important; }
+      #bulk-supply h2 { font-size: 1.625rem !important; }
+      .tab-panel > div > div > img { height: 180px !important; }
+      .pricing-card { padding: 1.75rem 1.25rem; }
+      .product-card-body { padding: 1rem; }
+    }
   </style>
 </head>
 <body>

@@ -549,3 +549,13 @@
   .anim-rotate-slow,
   .anim-breathe { animation: none; }
 }
+
+/* ================================================================
+   RESPONSIVE — DECORATIONS
+   ================================================================ */
+@media (max-width: 768px) {
+  .blob-1 { width: 280px; height: 280px; }
+  .blob-2 { width: 220px; height: 220px; }
+  .blob-3 { width: 160px; height: 160px; }
+  .leaf-deco { font-size: 3.5rem; }
+}

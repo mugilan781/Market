@@ -131,6 +131,8 @@
     #products-grid .product-card { flex: 0 0 calc(25% - 1.3125rem); }
     @media (max-width: 1024px) {
       #products-grid .product-card { flex: 0 0 calc(33.333% - 1.167rem); }
+      /* Blob decoration bleeds 60px off-screen right → contain it */
+      #bulk { overflow: hidden; }
     }
     @media (max-width: 768px) {
       #products-grid .product-card { flex: 0 0 calc(50% - 0.875rem); }
@@ -143,6 +145,35 @@
       .split-hero-right { height: 50vh; }
       .split-hero-left { padding: 2rem var(--container-pad); }
       .floating-badge { display: none; }
+    }
+    /* ================================================================
+       RESPONSIVE — PAGE-SPECIFIC OVERRIDES (home2)
+       !important only where overriding inline styles
+       ================================================================ */
+
+    /* ≤768px: shrink inline hero title, stack inline grids */
+    @media (max-width: 768px) {
+      #shop-hero-heading { font-size: clamp(2rem, 8vw, 2.5rem) !important; }
+      #farms [data-stagger="0.1"] { grid-template-columns: repeat(2, 1fr) !important; }
+      #delivery .container > div { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+      #bulk .container > div { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+    }
+
+    /* ≤640px: tighten bulk enquiry form card padding */
+    @media (max-width: 640px) {
+      #bulk [data-reveal="fade-left"] > div { padding: 1.5rem !important; }
+    }
+
+    /* ≤480px: single-column cards/rows, compact freshness strip */
+    @media (max-width: 480px) {
+      #farms [data-stagger="0.1"] { grid-template-columns: 1fr !important; }
+      #delivery [data-reveal="fade-left"] > div { grid-template-columns: 1fr !important; }
+      #bulk form > div[style*="1fr 1fr"] { grid-template-columns: 1fr !important; }
+      #bulk [data-reveal="fade-left"] > div { padding: 1.25rem !important; }
+      .farm-card-banner { height: 200px !important; }
+      .freshness-strip { padding: 1rem 0; }
+      .freshness-items { gap: 0.75rem; }
+      .freshness-divider { display: none; }
     }
   </style>
 </head>

@@ -16,6 +16,15 @@
     .error-page { min-height:80svh; display:flex; align-items:center; justify-content:center; text-align:center; padding:4rem var(--container-pad); background:var(--bg-primary); }
     .error-code { font-family:var(--font-serif); font-size:clamp(6rem,15vw,12rem); font-weight:900; line-height:1; background:var(--grad-primary); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:1rem; }
     .error-icon-box { display:flex; justify-content:center; align-items:center; margin-bottom:1rem; color:var(--color-forest); }
+    /* Responsive */
+    @media (max-width: 480px) {
+      .error-page { padding:2.5rem var(--container-pad); }
+      .error-code { font-size:clamp(4.5rem,22vw,6rem); }
+      form[role="search"] { flex-direction:column !important; max-width:100% !important; align-items:stretch; }
+      form[role="search"] input { min-width:0 !important; }
+      form[role="search"] button { width:100%; }
+      .error-page .btn { width:100%; }
+    }
   </style>
 </head>
 <body>

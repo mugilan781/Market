@@ -21,6 +21,28 @@
     .team-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); border-color: var(--color-leaf); }
     .cert-badge { background: var(--bg-card); border: 1.5px solid var(--border-light); border-radius: var(--radius-2xl); padding: 1.5rem; text-align: center; transition: all var(--dur-normal); }
     .cert-badge:hover { border-color: var(--color-leaf); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+
+    /* ===== About page responsive (tablet / phone / mobile) ===== */
+    @media (max-width: 768px) {
+      /* Story section: stack the inline 2-column grid into one column */
+      #story .container > div {
+        grid-template-columns: 1fr !important;
+        gap: var(--space-8) !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #story .container > div {
+        gap: var(--space-6) !important;
+      }
+      /* Timeline: tighten left gutter so the border + dots stay aligned */
+      .timeline { padding-left: var(--space-6); }
+      .timeline-dot { left: calc(-1.5rem - 9px); }
+      .timeline-item { margin-bottom: var(--space-6); }
+      /* Cards: trim padding for narrow single/2-col layouts */
+      .cert-badge { padding: var(--space-4); }
+      .feature-card { padding: var(--space-5); }
+    }
   </style>
 </head>
 <body>

@@ -659,6 +659,8 @@ p {
    ================================================================ */
 @media (max-width: 1024px) {
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-2 { gap: var(--space-6); }
+  .page-hero { padding: calc(var(--navbar-h) + 2.5rem) 0 2.5rem; }
 }
 
 @media (max-width: 768px) {
@@ -668,9 +670,22 @@ p {
   .section { padding-block: clamp(3rem, 6vw, 4rem); }
   h1 { font-size: clamp(2rem, 8vw, 2.5rem); }
   h2 { font-size: clamp(1.75rem, 6vw, 2rem); }
+  .page-hero { padding: calc(var(--navbar-h) + 1.5rem) 0 1.5rem; }
+  .page-hero-title { font-size: clamp(1.75rem, 7vw, 2.25rem); }
+  .page-hero-subtitle { font-size: var(--text-base); }
+  .section-header { margin-bottom: 2rem; }
+  .section-title { font-size: clamp(1.75rem, 6vw, 2.25rem); }
+  .section-subtitle { font-size: var(--text-base); }
+  .lead { font-size: var(--text-base); }
+  .stat-number { font-size: clamp(2rem, 6vw, 2.75rem); }
+}
+
+@media (max-width: 640px) {
+  .page-hero { padding: calc(var(--navbar-h) + 1rem) 0 1rem; }
+  .breadcrumb { font-size: var(--text-xs); }
 }
 
 @media (max-width: 480px) {
-  .grid-3 { grid-template-columns: repeat(2, 1fr); }
   :root { --container-pad: 1rem; }
+  .grid-auto { grid-template-columns: 1fr; }
 }

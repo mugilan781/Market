@@ -21,6 +21,16 @@
     .countdown-label { font-size:var(--text-xs); color:var(--text-muted); text-transform:uppercase; letter-spacing:var(--ls-wider); font-weight:600; }
     .progress-bar-wrap { background:var(--border-light); border-radius:var(--radius-full); height:12px; overflow:hidden; max-width:400px; margin:1.5rem auto; }
     .progress-bar-fill { background:var(--grad-primary); height:100%; width:75%; border-radius:var(--radius-full); transition:width 1s ease-in-out; }
+    /* Responsive */
+    @media (max-width: 640px) {
+      .countdown-grid { grid-template-columns:repeat(2,1fr); }
+    }
+    @media (max-width: 480px) {
+      .maintenance-page { padding:2rem var(--container-pad); }
+      .countdown-grid { grid-template-columns:repeat(2,1fr); gap:0.75rem; }
+      .countdown-box { padding:1rem 0.75rem; }
+      .maintenance-page .container > div[style*="repeat(3,1fr)"] { grid-template-columns:repeat(1,1fr) !important; gap:0.75rem !important; }
+    }
   </style>
 </head>
 <body>
