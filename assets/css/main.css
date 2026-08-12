@@ -297,19 +297,10 @@ svg { vertical-align: middle; }
   to { width: 100%; }
 }
 
-/* ── Page Transition Overlay ── */
+/* ── Page Transition Overlay (Disabled) ── */
 #page-transition {
-  position: fixed;
-  inset: 0;
-  background: var(--color-forest);
-  transform: scaleY(0);
-  transform-origin: bottom;
-  z-index: 9998;
-  transition: transform 0.5s var(--ease-smooth);
-  pointer-events: none;
+  display: none !important;
 }
-#page-transition.entering { transform: scaleY(1); transform-origin: bottom; }
-#page-transition.leaving  { transform: scaleY(0); transform-origin: top; }
 
 /* ================================================================
    TYPOGRAPHY

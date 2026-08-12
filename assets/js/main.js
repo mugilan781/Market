@@ -24,27 +24,7 @@ const initLoader = () => {
    PAGE TRANSITIONS
    ================================================================ */
 const initPageTransitions = () => {
-  const overlay = document.getElementById('page-transition');
-  if (!overlay) return;
-
-  const triggerLinks = document.querySelectorAll('a[href]:not([href^="#"]):not([href^="mailto"]):not([href^="tel"]):not([target="_blank"])');
-
-  triggerLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      const href = link.getAttribute('href');
-      if (!href || href === '#' || href.startsWith('javascript')) return;
-      e.preventDefault();
-
-      overlay.classList.add('entering');
-      setTimeout(() => {
-        window.location.href = href;
-      }, 450);
-    });
-  });
-
-  // On new page load, animate out
-  overlay.classList.add('leaving');
-  setTimeout(() => overlay.classList.remove('leaving'), 500);
+  // Page slide transition disabled to allow direct page load with loading animation
 };
 
 /* ================================================================
