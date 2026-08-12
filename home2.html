@@ -265,18 +265,18 @@
     </div>
   </div>
 
-  <!-- ══ SECTION 3: DAILY PRODUCE + FILTER ══ -->
-  <section class="section bg-primary" id="daily-produce" aria-labelledby="daily-heading">
+  <!-- ══ SECTION 3: TODAY'S BEST PICKS (PRODUCTS) ══ -->
+  <section class="section" id="products" aria-labelledby="products-heading">
     <div class="container">
-      <div class="section-header" data-reveal="fade-up">
-        <div class="section-label"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v6"/><path d="M4.93 10.93l4.24 4.24"/><path d="M2 18h20"/><path d="M20 18a8 8 0 0 0-16 0"/></svg> Daily Fresh</div>
-        <h2 class="section-title" id="daily-heading">Today's Best <span class="highlight">Picks</span></h2>
-        <p class="section-subtitle">Harvested this morning, delivered to you tonight.</p>
+      <div class="section-header text-center" data-reveal="fade-up">
+        <div class="section-label"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg> Harvest Fresh</div>
+        <h2 class="section-title" id="products-heading">Today's <span class="highlight">Best Picks</span></h2>
+        <p class="section-subtitle">Hand-picked this morning. Delivered to your doorstep within 4 hours.</p>
       </div>
 
       <!-- Filter Tabs -->
-      <div class="product-grid-filters" role="group" aria-label="Product category filters" data-reveal="fade-up" data-delay="100">
-        <button class="tag active" data-filter="all" id="filter-all">All</button>
+      <div class="filter-tabs" style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem;margin-bottom:2.5rem;text-align:center;" data-reveal="fade-up">
+        <button class="tag active" data-filter="all" id="filter-all">All Produce</button>
         <button class="tag" data-filter="vegetables" id="filter-veg">Vegetables</button>
         <button class="tag" data-filter="fruits" id="filter-fruit">Fruits</button>
         <button class="tag" data-filter="herbs" id="filter-herbs">Herbs</button>
@@ -285,7 +285,7 @@
       </div>
 
       <!-- Products Grid -->
-      <div class="grid-auto" id="products-grid">
+      <div class="grid-auto" id="products-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.75rem;justify-content:center;">
 
         <div class="product-card" data-category="vegetables,organic" data-reveal="fade-up" data-delay="100">
           <div class="product-card-img"><div style="width:100%;height:100%;background:var(--color-forest-50);display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="assets/images/product_baby_spinach.png" alt="Baby Spinach Bundle" style="width:100%;height:100%;object-fit:cover;"></div>
@@ -389,6 +389,40 @@
           </div>
         </div>
 
+        <div class="product-card" data-category="vegetables,organic" data-reveal="fade-up" data-delay="400">
+          <div class="product-card-img"><div style="width:100%;height:100%;background:var(--color-forest-50);display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="assets/images/product_avocado.png" alt="Hass Avocados" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="product-card-badges"><span class="badge badge-leaf">Organic</span></div>
+            <button class="product-card-wishlist" aria-label="Add to wishlist"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-category">Exotic Veg</div>
+            <h3 class="product-name">Hass Avocados</h3>
+            <div class="product-origin"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Kodaikanal, Tamil Nadu</div>
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <div class="product-footer">
+              <div class="product-price"><span class="price-current">₹120</span><span class="price-unit">/500g</span></div>
+              <button class="btn-cart" aria-label="Add Hass Avocados to cart"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="fruits,specials" data-reveal="fade-up" data-delay="450">
+          <div class="product-card-img"><div style="width:100%;height:100%;background:#FFF7ED;display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="assets/images/product_alphonso_mango.png" alt="Alphonso Mango" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="product-card-badges"><span class="badge badge-gold">Premium</span></div>
+            <button class="product-card-wishlist" aria-label="Add to wishlist"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-category">Tropical Fruits</div>
+            <h3 class="product-name">Alphonso Mango</h3>
+            <div class="product-origin"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Ratnagiri, Maharashtra</div>
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <div class="product-footer">
+              <div class="product-price"><span class="price-current">₹250</span><span class="price-unit">/dozen</span></div>
+              <button class="btn-cart" aria-label="Add Alphonso Mango to cart"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></button>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -404,48 +438,60 @@
 
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;" data-stagger="0.1">
 
-        <div class="farm-card" data-reveal="fade-up" data-delay="100">
-          <div class="farm-card-header">
-            <div class="farm-avatar"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v20"/><path d="M8 6l4-2 4 2"/><path d="M7 10l5-2 5 2"/></svg></div>
-            <div>
-              <div style="font-family:var(--font-serif);font-size:var(--text-xl);color:white;font-weight:600;">Green Valley Organics</div>
-              <div style="font-size:var(--text-xs);color:rgba(255,255,255,0.85);"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Ooty, Tamil Nadu</div>
+        <div class="farm-card" style="overflow:hidden;" data-reveal="fade-up" data-delay="100">
+          <div class="farm-card-banner" style="height:140px;position:relative;overflow:hidden;">
+            <img src="assets/images/about-farm.jpg" alt="Green Valley Organics Farm" style="width:100%;height:100%;object-fit:cover;">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(15,38,24,0.92) 0%, rgba(15,38,24,0.3) 100%);"></div>
+            <div style="position:absolute;bottom:0.85rem;left:1rem;right:1rem;display:flex;align-items:center;gap:0.75rem;z-index:2;">
+              <div class="farm-avatar" style="flex-shrink:0;"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v20"/><path d="M8 6l4-2 4 2"/><path d="M7 10l5-2 5 2"/></svg></div>
+              <div>
+                <div style="font-family:var(--font-serif);font-size:1.15rem;color:white;font-weight:600;line-height:1.2;">Green Valley Organics</div>
+                <div style="font-size:var(--text-xs);color:rgba(255,255,255,0.85);margin-top:2px;"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Ooty, Tamil Nadu</div>
+              </div>
             </div>
           </div>
-          <div style="padding:1.5rem;">
-            <p style="font-size:var(--text-sm);color:var(--text-secondary);margin-bottom:1rem;">Specializing in leafy greens, herbs, and alpine vegetables at 2400m elevation. Family-operated since 1998.</p>
+          <div style="padding:1.25rem 1.5rem 1.5rem;">
+            <p style="font-size:var(--text-sm);color:var(--text-secondary);margin-bottom:1rem;line-height:1.5;">Specializing in leafy greens, herbs, and alpine vegetables at 2400m elevation. Family-operated since 1998.</p>
             <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
               <span class="badge badge-leaf">Greens</span><span class="badge badge-leaf">Herbs</span><span class="badge badge-green">Certified</span>
             </div>
           </div>
         </div>
 
-        <div class="farm-card" data-reveal="fade-up" data-delay="200">
-          <div class="farm-card-header">
-            <div class="farm-avatar"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="13" r="9"/><path d="M12 4V2"/><path d="M10 2h4"/></svg></div>
-            <div>
-              <div style="font-family:var(--font-serif);font-size:var(--text-xl);color:white;font-weight:600;">Citrus Sun Orchards</div>
-              <div style="font-size:var(--text-xs);color:rgba(255,255,255,0.85);"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Nagpur, Maharashtra</div>
+        <div class="farm-card" style="overflow:hidden;" data-reveal="fade-up" data-delay="200">
+          <div class="farm-card-banner" style="height:140px;position:relative;overflow:hidden;">
+            <img src="assets/images/blog_farm.jpg" alt="Citrus Sun Orchards" style="width:100%;height:100%;object-fit:cover;">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(15,38,24,0.92) 0%, rgba(15,38,24,0.3) 100%);"></div>
+            <div style="position:absolute;bottom:0.85rem;left:1rem;right:1rem;display:flex;align-items:center;gap:0.75rem;z-index:2;">
+              <div class="farm-avatar" style="flex-shrink:0;"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="13" r="9"/><path d="M12 4V2"/><path d="M10 2h4"/></svg></div>
+              <div>
+                <div style="font-family:var(--font-serif);font-size:1.15rem;color:white;font-weight:600;line-height:1.2;">Citrus Sun Orchards</div>
+                <div style="font-size:var(--text-xs);color:rgba(255,255,255,0.85);margin-top:2px;"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Nagpur, Maharashtra</div>
+              </div>
             </div>
           </div>
-          <div style="padding:1.5rem;">
-            <p style="font-size:var(--text-sm);color:var(--text-secondary);margin-bottom:1rem;">Famous for the world-renowned GI-tagged Nagpur oranges and tropical citrus varieties grown over 200 acres.</p>
+          <div style="padding:1.25rem 1.5rem 1.5rem;">
+            <p style="font-size:var(--text-sm);color:var(--text-secondary);margin-bottom:1rem;line-height:1.5;">Famous for the world-renowned GI-tagged Nagpur oranges and tropical citrus varieties grown over 200 acres.</p>
             <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
               <span class="badge badge-terra">Citrus</span><span class="badge badge-gold">Tropical</span><span class="badge badge-green">GI Tag</span>
             </div>
           </div>
         </div>
 
-        <div class="farm-card" data-reveal="fade-up" data-delay="300">
-          <div class="farm-card-header">
-            <div class="farm-avatar"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 13v8"/><path d="M7 11.5a4.5 4.5 0 0 1 3-4.24 5 5 0 0 1 9.5 1.74 4.5 4.5 0 0 1-2.5 8h-7a4.5 4.5 0 0 1-3-5.5z"/></svg></div>
-            <div>
-              <div style="font-family:var(--font-serif);font-size:var(--text-xl);color:white;font-weight:600;">Himalayan Harvest Co.</div>
-              <div style="font-size:var(--text-xs);color:rgba(255,255,255,0.85);"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Himachal Pradesh</div>
+        <div class="farm-card" style="overflow:hidden;" data-reveal="fade-up" data-delay="300">
+          <div class="farm-card-banner" style="height:140px;position:relative;overflow:hidden;">
+            <img src="assets/images/gen_blog_farm.png" alt="Himalayan Harvest Co." style="width:100%;height:100%;object-fit:cover;">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(15,38,24,0.92) 0%, rgba(15,38,24,0.3) 100%);"></div>
+            <div style="position:absolute;bottom:0.85rem;left:1rem;right:1rem;display:flex;align-items:center;gap:0.75rem;z-index:2;">
+              <div class="farm-avatar" style="flex-shrink:0;"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 13v8"/><path d="M7 11.5a4.5 4.5 0 0 1 3-4.24 5 5 0 0 1 9.5 1.74 4.5 4.5 0 0 1-2.5 8h-7a4.5 4.5 0 0 1-3-5.5z"/></svg></div>
+              <div>
+                <div style="font-family:var(--font-serif);font-size:1.15rem;color:white;font-weight:600;line-height:1.2;">Himalayan Harvest Co.</div>
+                <div style="font-size:var(--text-xs);color:rgba(255,255,255,0.85);margin-top:2px;"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Himachal Pradesh</div>
+              </div>
             </div>
           </div>
-          <div style="padding:1.5rem;">
-            <p style="font-size:var(--text-sm);color:var(--text-secondary);margin-bottom:1rem;">High-altitude organic vegetables including rare purple varieties, baby vegetables, and heritage cultivars.</p>
+          <div style="padding:1.25rem 1.5rem 1.5rem;">
+            <p style="font-size:var(--text-sm);color:var(--text-secondary);margin-bottom:1rem;line-height:1.5;">High-altitude organic vegetables including rare purple varieties, baby vegetables, and heritage cultivars.</p>
             <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
               <span class="badge badge-leaf">Root Veg</span><span class="badge badge-green">Rare Varieties</span>
             </div>
@@ -506,11 +552,11 @@
               <div style="font-size:var(--text-sm);color:var(--icon-gold);font-weight:600;">₹79 Delivery</div>
               <div style="font-size:var(--text-xs);color:var(--text-muted);margin-top:0.25rem;">Next-day available</div>
             </div>
-            <div class="coverage-zone" data-reveal="zoom-in" data-delay="400" style="background:var(--color-forest);border-color:var(--color-forest);">
-              <div style="margin-bottom:0.5rem;color:white;"><svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
-              <h3 style="font-family:var(--font-serif);font-size:var(--text-lg);color:white;margin-bottom:0.25rem;">Nationwide</h3>
+            <div class="coverage-zone" data-reveal="zoom-in" data-delay="400">
+              <div style="margin-bottom:0.5rem;color:var(--color-forest);"><svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+              <h3 style="font-family:var(--font-serif);font-size:var(--text-lg);color:var(--text-primary);margin-bottom:0.25rem;">Nationwide</h3>
               <div style="font-size:var(--text-sm);color:var(--color-gold);font-weight:600;">Bulk Orders</div>
-              <div style="font-size:var(--text-xs);color:rgba(255,255,255,0.8);margin-top:0.25rem;">Custom pricing</div>
+              <div style="font-size:var(--text-xs);color:var(--text-muted);margin-top:0.25rem;">Custom pricing</div>
             </div>
           </div>
         </div>
@@ -522,12 +568,9 @@
   <!-- ══ SECTION 6: BLOG TEASER ══ -->
   <section class="section" style="background:var(--bg-secondary);" id="blog-teaser" aria-labelledby="blog-teaser-heading">
     <div class="container">
-      <div class="section-header flex-between" data-reveal="fade-up">
-        <div>
-          <div class="section-label"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1m2 13a2 2 0 0 1-2-2V7m2 13a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/></svg> Fresh From Our Kitchen</div>
-          <h2 class="section-title" id="blog-teaser-heading">Latest <span class="highlight">Articles</span></h2>
-        </div>
-        <a href="blog.html" class="btn btn-outline" style="flex-shrink:0;">View All Posts</a>
+      <div class="section-header text-center" data-reveal="fade-up">
+        <div class="section-label"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1m2 13a2 2 0 0 1-2-2V7m2 13a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/></svg> Fresh From Our Kitchen</div>
+        <h2 class="section-title" id="blog-teaser-heading">Latest <span class="highlight">Articles</span></h2>
       </div>
 
       <div class="grid-3">
@@ -569,6 +612,10 @@
             <a href="blog-details.html" class="blog-read-more">Read Article →</a>
           </div>
         </article>
+      </div>
+
+      <div class="text-center" style="margin-top:2.5rem;" data-reveal="fade-up">
+        <a href="blog.html" class="btn btn-outline btn-lg">View All Posts</a>
       </div>
     </div>
   </section>

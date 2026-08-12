@@ -247,6 +247,24 @@
 [data-theme="dark"] .badge-cream  { background: rgba(255,251,235,0.1); color: rgba(255,251,235,0.85); }
 
 /* ================================================================
+   COVERAGE ZONES (DELIVERY) DARK MODE
+   ================================================================ */
+[data-theme="dark"] .coverage-zone {
+  background: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .coverage-zone h3 {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .coverage-zone div[style*="color:var(--color-forest)"],
+[data-theme="dark"] .coverage-zone div[style*="color:white"],
+[data-theme="dark"] .coverage-zone svg {
+  color: #4ADE80 !important;
+}
+
+/* ================================================================
    BLOG DARK MODE
    ================================================================ */
 [data-theme="dark"] .blog-card-img { background: var(--bg-tertiary); }
