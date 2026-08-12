@@ -368,7 +368,7 @@ const BLOG_POSTS = {
     date: 'Jun 29, 2026',
     read: '4 min read',
     views: '12,400',
-    img: 'assets/images/products-grid.jpg',
+    img: 'assets/images/blog_monsoon_salad.png',
     alt: 'Fresh monsoon salad ingredients flat lay',
     intro: 'The classic answer to "what can I do with all this seasonal produce?" — a crunchy, citrussy salad that uses whatever the garden (or the market) gave you that morning.',
     toc: [
@@ -417,7 +417,7 @@ const BLOG_POSTS = {
     date: 'Jun 18, 2026',
     read: '7 min read',
     views: '9,800',
-    img: 'assets/images/blog_recipes.jpg',
+    img: 'assets/images/blog_veggie_biryani.png',
     alt: 'One-pot vegetable biryani with farm vegetables',
     intro: 'The biryani that makes a weekday dinner feel like a Sunday feast — one pot, layered rice, and whatever vegetables are freshest at your market this week.',
     toc: [
@@ -472,7 +472,7 @@ const BLOG_POSTS = {
     date: 'Jun 9, 2026',
     read: '3 min read',
     views: '8,200',
-    img: 'assets/images/blog_smoothie.jpg',
+    img: 'assets/images/blog_green_juice.png',
     alt: 'Green smoothie bowl with fresh fruit',
     intro: 'Five ingredients, five minutes, one very serious glass of green. This is the recipe our quality team actually drinks every morning during monsoon season.',
     toc: [
@@ -518,7 +518,7 @@ const BLOG_POSTS = {
     date: 'May 30, 2026',
     read: '4 min read',
     views: '7,600',
-    img: 'assets/images/blog_mango.jpg',
+    img: 'assets/images/blog_mango_lassi.png',
     alt: 'Mango lassi with raw honey and cardamom',
     intro: 'The most famous drink of the Indian summer, fixed properly: ripe mango, thick curd, a little milk, and raw honey instead of sugar. No syrups, no shortcuts.',
     toc: [
