@@ -128,6 +128,16 @@
       transition: all var(--dur-normal);
     }
     .coverage-zone:hover { border-color: var(--color-leaf); box-shadow: 0 0 0 3px rgba(101,163,13,0.1); }
+    #products-grid .product-card { flex: 0 0 calc(25% - 1.3125rem); }
+    @media (max-width: 1024px) {
+      #products-grid .product-card { flex: 0 0 calc(33.333% - 1.167rem); }
+    }
+    @media (max-width: 768px) {
+      #products-grid .product-card { flex: 0 0 calc(50% - 0.875rem); }
+    }
+    @media (max-width: 520px) {
+      #products-grid .product-card { flex: 0 0 100%; }
+    }
     @media (max-width: 768px) {
       .split-hero { grid-template-columns: 1fr; }
       .split-hero-right { height: 50vh; }
@@ -285,7 +295,7 @@
       </div>
 
       <!-- Products Grid -->
-      <div class="grid-auto" id="products-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.75rem;justify-content:center;">
+      <div class="grid-auto" id="products-grid" style="display:flex;flex-wrap:wrap;justify-content:center;gap:1.75rem;">
 
         <div class="product-card" data-category="vegetables,organic" data-reveal="fade-up" data-delay="100">
           <div class="product-card-img"><div style="width:100%;height:100%;background:var(--color-forest-50);display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="assets/images/product_baby_spinach.png" alt="Baby Spinach Bundle" style="width:100%;height:100%;object-fit:cover;"></div>
@@ -374,7 +384,7 @@
 
         <div class="product-card" data-category="vegetables,organic" data-reveal="fade-up" data-delay="350">
           <div class="product-card-img"><div style="width:100%;height:100%;background:var(--color-forest-50);display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="assets/images/product_purple_carrots.png" alt="Purple Carrots" style="width:100%;height:100%;object-fit:cover;"></div>
-            <div class="product-card-badges"><span class="badge badge-leaf">Organic</span><span class="badge badge-green">New</span></div>
+            <div class="product-card-badges"><span class="badge badge-leaf">Organic</span></div>
             <button class="product-card-wishlist" aria-label="Add to wishlist"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
           </div>
           <div class="product-card-body">
@@ -525,7 +535,7 @@
               <div><strong style="color:var(--text-primary);">Scheduled</strong> — Choose your preferred morning or evening slot</div>
             </div>
             <div style="display:flex;gap:1rem;align-items:center;">
-              <span style="color:var(--color-forest);"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21.5 2v6h-6"/><path d="M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg></span>
+              <span style="color:var(--color-leaf);"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21.5 2v6h-6"/><path d="M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg></span>
               <div><strong style="color:var(--text-primary);">Subscription</strong> — Weekly or bi-weekly automatic delivery</div>
             </div>
           </div>
@@ -639,7 +649,7 @@
             </div>
             <div class="feature-card" style="padding:1.25rem;">
               <div style="display:flex;gap:1rem;align-items:center;">
-                <span style="color:var(--color-forest);"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21.5 2v6h-6"/><path d="M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg></span>
+                <span style="color:var(--color-leaf);"><svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21.5 2v6h-6"/><path d="M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg></span>
                 <div><strong>Standing Order Convenience</strong><p style="font-size:var(--text-sm);color:var(--text-muted);margin:0;">Set weekly recurring orders — we handle the rest</p></div>
               </div>
             </div>

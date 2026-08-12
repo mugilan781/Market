@@ -81,6 +81,17 @@
 
 [data-theme="dark"] .nav-icon-btn { color: rgba(240,235,224,0.85); }
 
+[data-theme="dark"] .btn-outline {
+  color: #A3E635;
+  border-color: rgba(163,230,53,0.6);
+}
+
+[data-theme="dark"] .btn-outline:hover {
+  background: #A3E635;
+  border-color: #A3E635;
+  color: #0D1F14;
+}
+
 [data-theme="dark"] .nav-dropdown {
   background: var(--bg-card);
   border-color: var(--border-color);
@@ -240,11 +251,13 @@
 /* ================================================================
    BADGES DARK MODE
    ================================================================ */
-[data-theme="dark"] .badge-green  { background: rgba(20,83,45,0.25); color: #A3E635; }
-[data-theme="dark"] .badge-leaf   { background: rgba(101,163,13,0.2); color: #A3E635; }
-[data-theme="dark"] .badge-gold   { background: rgba(234,179,8,0.15); color: #FCD34D; }
-[data-theme="dark"] .badge-terra  { background: rgba(194,65,12,0.15); color: #FB923C; }
-[data-theme="dark"] .badge-cream  { background: rgba(255,251,235,0.1); color: rgba(255,251,235,0.85); }
+[data-theme="dark"] .badge-green  { background: #0D3B1A; color: #86EFAC; }
+[data-theme="dark"] .badge-leaf   { background: #162D1E; color: #A3E635; }
+[data-theme="dark"] .badge-gold   { background: #3D2E0A; color: #FCD34D; }
+[data-theme="dark"] .badge-terra  { background: #3A1D0A; color: #FB923C; }
+[data-theme="dark"] .badge-cream  { background: #2E2A20; color: #FFFBEB; }
+[data-theme="dark"] .badge-solid  { background: #166534; color: white; }
+[data-theme="dark"] .badge-outline { border-color: rgba(163,230,53,0.6); color: #A3E635; }
 
 /* ================================================================
    COVERAGE ZONES (DELIVERY) DARK MODE
