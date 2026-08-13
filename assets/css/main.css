@@ -655,6 +655,21 @@ p {
 }
 
 /* ================================================================
+   HORIZONTAL OVERFLOW GUARD (MOBILE/TABLET)
+   Below-the-fold scroll-reveal elements ([data-reveal="fade-left"]
+   / "fade-right") start translated ±50px off-screen, which widens
+   the document and causes a right-side gap on phones. iOS ignores
+   overflow-x on <body>, so it must be set on <html>.
+   Desktop (>1024px) is untouched.
+   ================================================================ */
+@media (max-width: 1024px) {
+  html {
+    overflow-x: hidden; /* fallback for older browsers */
+    overflow-x: clip;   /* modern: clips without creating a scroll container */
+  }
+}
+
+/* ================================================================
    RESPONSIVE — LAYOUT
    ================================================================ */
 @media (max-width: 1024px) {
