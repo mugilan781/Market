@@ -175,6 +175,81 @@
       .freshness-items { gap: 0.75rem; }
       .freshness-divider { display: none; }
     }
+
+    /* ≤1024px: hero image becomes full-bleed background (like home page
+       hero) with a dark overlay — contents sit on top of the image.
+       Desktop (>1024px) keeps the split layout untouched. */
+    @media (max-width: 1024px) {
+      .split-hero {
+        display: block;
+        min-height: 100svh;
+        padding-top: 0;
+        background: var(--color-forest);
+      }
+      .split-hero-right {
+        position: absolute;
+        inset: 0;
+        height: auto;
+        z-index: 0;
+      }
+      .split-hero-right::after {
+        /* Same strength as home page hero overlay (--grad-hero) */
+        background: linear-gradient(to bottom,
+          rgba(5, 20, 10, 0.9) 0%,
+          rgba(20, 83, 45, 0.7) 50%,
+          rgba(5, 20, 10, 0.9) 100%);
+      }
+      .split-hero-left {
+        position: relative;
+        z-index: 1;
+        min-height: 100svh;
+        padding: calc(var(--navbar-h) + 2.5rem) var(--container-pad) 3.5rem;
+        justify-content: center;
+      }
+      #shop-hero-heading { font-size: clamp(2.5rem, 6vw, 3.5rem) !important; }
+      .split-hero-left .section-label { color: var(--color-gold); }
+      .split-hero-left .section-title { color: white; }
+      .split-hero-left .lead { color: rgba(255, 255, 255, 0.9); }
+      .split-hero-left .btn-outline {
+        background: transparent;
+        color: white;
+        border-color: rgba(255, 255, 255, 0.6);
+      }
+      .split-hero-left .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: white;
+        color: white;
+      }
+      .split-hero-left [style*="color:var(--text-secondary)"] {
+        color: rgba(255, 255, 255, 0.85) !important;
+      }
+      .split-hero-left [style*="color:var(--color-leaf)"] {
+        color: var(--color-gold) !important;
+      }
+      /* Header: same dark transparent style as the home page hero
+         (mobile/tablet only). Scrolled state is untouched. */
+      .navbar.transparent.light-hero-nav {
+        background: linear-gradient(to bottom,
+          rgba(10, 45, 25, 0.9) 0%,
+          rgba(10, 45, 25, 0.6) 55%,
+          rgba(10, 45, 25, 0.15) 100%);
+        border-bottom-color: transparent;
+      }
+      .navbar.transparent.light-hero-nav .logo-text .logo-main { color: white; }
+      .navbar.transparent.light-hero-nav .logo-text .logo-sub { color: rgba(255, 255, 255, 0.8); }
+      .navbar.transparent.light-hero-nav .nav-link { color: rgba(255, 255, 255, 0.9); }
+      .navbar.transparent.light-hero-nav .nav-link:hover {
+        color: white;
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .navbar.transparent.light-hero-nav .nav-link.active,
+      .navbar.transparent.light-hero-nav .nav-link.active:hover {
+        color: #65A30D !important;
+        background: rgba(101, 163, 13, 0.15) !important;
+      }
+      .navbar.transparent.light-hero-nav .nav-icon-btn { color: rgba(255, 255, 255, 0.9); }
+      .navbar.transparent.light-hero-nav .hamburger .bar { background: white; }
+    }
   </style>
 </head>
 <body>
