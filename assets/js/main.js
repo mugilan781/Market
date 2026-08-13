@@ -174,7 +174,10 @@ const initTheme = () => {
    ================================================================ */
 const initRTL = () => {
   const savedDir = localStorage.getItem('fm-dir') || 'ltr';
-  document.documentElement.setAttribute('dir', savedDir);
+  // Set dir on <body>, not <html>: keeping the root LTR stops the browser
+  // from flipping the vertical scrollbar to the left (the 'bar' that
+  // appeared to cross the page on every toggle).
+  document.body.setAttribute('dir', savedDir);
 
   document.querySelectorAll('.rtl-toggle').forEach(btn => {
     const updateBtn = (dir) => {
@@ -185,9 +188,24 @@ const initRTL = () => {
     updateBtn(savedDir);
 
     btn.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('dir');
+      const current = document.body.getAttribute('dir');
       const next    = current === 'rtl' ? 'ltr' : 'rtl';
-      document.documentElement.setAttribute('dir', next);
+
+      // A closed cart drawer animates translateX(100%) -> translateX(-100%)
+      // when the direction flips, sliding across the whole screen (the
+      // 'bar' artifact). Kill the transition for one frame so the drawer
+      // teleports to its new off-screen side instead. (Double rAF: the
+      // first frame paints the instant jump, the second restores the
+      // transition so open/close animations keep working.)
+      const cartDrawer = document.getElementById('cart-drawer');
+      if (cartDrawer && !cartDrawer.classList.contains('active')) {
+        cartDrawer.style.transition = 'none';
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => { cartDrawer.style.transition = ''; });
+        });
+      }
+
+      document.body.setAttribute('dir', next);
       localStorage.setItem('fm-dir', next);
       updateBtn(next);
     });
