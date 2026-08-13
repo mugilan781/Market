@@ -95,6 +95,18 @@ const initMobileMenu = () => {
   closeBtn?.addEventListener('click', closeMenu);
   overlay?.addEventListener('click', closeMenu);
 
+  // Auto-close the drawer when the viewport crosses to desktop
+  // (e.g. opening the menu on mobile then resizing DevTools to desktop)
+  const desktopMQ = window.matchMedia('(min-width: 1025px)');
+  const onViewportDesktop = (e) => {
+    if (e.matches) closeMenu();
+  };
+  if (desktopMQ.addEventListener) {
+    desktopMQ.addEventListener('change', onViewportDesktop);
+  } else {
+    desktopMQ.addListener(onViewportDesktop);
+  }
+
   // Sub-menu toggles
   document.querySelectorAll('.mobile-nav-link[data-sub]').forEach(link => {
     link.addEventListener('click', () => {
