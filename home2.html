@@ -205,11 +205,17 @@
         min-height: 100svh;
         padding: calc(var(--navbar-h) + 2.5rem) var(--container-pad) 3.5rem;
         justify-content: center;
+        align-items: center;
+        text-align: center;
       }
       #shop-hero-heading { font-size: clamp(2.5rem, 6vw, 3.5rem) !important; }
-      .split-hero-left .section-label { color: var(--color-gold); }
+      .split-hero-left .section-label { color: var(--color-gold); justify-content: center; }
       .split-hero-left .section-title { color: white; }
+      /* 'Fresh' was dark green like the overlay — switch to gold for contrast */
+      .split-hero-left .highlight { color: var(--color-gold); }
       .split-hero-left .lead { color: rgba(255, 255, 255, 0.9); }
+      /* inline flex rows (buttons + trust badges) center with the rest */
+      .split-hero-left > div[style*="display:flex"] { justify-content: center; }
       .split-hero-left .btn-outline {
         background: transparent;
         color: white;
